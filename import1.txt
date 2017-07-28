@@ -1,0 +1,22 @@
+1.package com.altratek.altraserver.extensions.holiday.data;里存有数据定义:
+  公共的接口:
+    Data:来实现公共的方法接口.[统一操作]
+        get:
+        set:
+        incr:
+        decr: 数据都是int型的.
+        getRaw: Integer/不存在则是返回null.
+
+  下面实现的类:
+    DaData: 存在Mysql的数据[长期,也可以一周一清]
+    McData: 存在Memcached的数据[一天一清]
+    RedisData: 存在Redis里的数据[共享]
+    UserVarData: 存在socket内存里的用户属性数据[在线时保存]
+
+    CD: cd时间间隔.
+
+
+
+2.package com.altratek.altraserver.extensions.util;
+  类:
+    DataUtil: 

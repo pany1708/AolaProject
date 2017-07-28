@@ -1,0 +1,7 @@
+1.Java的Iterator是接口,只能单向移动.Iterator只能用来:
+1)使用Iterator()要求容器返回一个Iterator,准备好返回序列的第一个元素.\
+2)使用next()获得下一个元素.
+3)使用hasNext()检查序列中是否还有元素。
+4)使用remove()将新的返回的元素删除.
+
+在调用remove之前，先调用next();

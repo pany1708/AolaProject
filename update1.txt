@@ -1,0 +1,27 @@
+需要问师傅的问题:
+1)作用
+WiseKing170428.java   48
+WisdomKingChallenge.java   263
+
+
+
+
+
+自己解决的:
+static
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.stream.Collectors;
+
+->
+
+String.format();
+
+与holiday平级的util包里面有用的类
+1.时间
+2.格式化
+
+Math
+StringBuilder

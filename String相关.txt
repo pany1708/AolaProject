@@ -1,0 +1,28 @@
+Sting相关:
+
+
+1. 与基本类型的转换:
+int i = Integer.parseInt(String);
+
+注:Integer.parseIn和Integer.valueOf不同,前者生成的是整型,而后者是一个对象,所以要通过intValue()来获得对象的值；
+
+String str = String.valueOf(int i);
+
+Integer INT = Integer.valueOf(str);
+
+int i = Integer.intValue();
+
+
+parseInt(): 返回的是int
+valueOf(): 返回的是Object.
+
+
+
+2. String.format()的说明:
+占位符:  转换符
+%s  字符串类型
+%c  字符类型
+%b  布尔类型
+%d  十进制整数
+%f  浮点类型
+%n  换行符

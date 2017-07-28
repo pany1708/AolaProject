@@ -1,0 +1,36 @@
+1. 语法
+(Type1 param1, Type2 param2) -> { }
+
+单个参数时
+param1 -> { }
+
+单语句
+param1 -> statement
+
+方法引用:
+Class or instance::method
+
+final: 外部的变量访问
+以前Java的匿名内部类在访问外部变量的时候，外部变量必须用final修饰。现在java8对这个限制做了优化，可以不用显示使用final修饰，但是
+编译器隐式当成final来处理。
+
+一段带有输入参数的可执行语句块.
+
+2. 双::是java中的方法引用
+当们使用一个方法的引用时，目标引用放在 :: 之前，目标引用提供的方法名称放在 :: 之后，即 目标引用::方法
+
+3.
+线程可以初始化如下：
+
+// Old way
+new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Hello world");
+    }
+}).start();
+
+// New way
+new Thread(
+    () -> System.out.println("Hello world")
+).start();

@@ -1,0 +1,20 @@
+1. ArrayList.toArray(T[] a);
+
+
+2. 数组转List
+
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(array));
+或者
+ArrayList<Integer> list = new ArrayList<>(array.length);
+Collections.addAll(list, array);
+
+
+3. List list = new ArrayList();
+尽量返回接口类型而非具体的类.
+
+4.ArrayList.forEach({});
+bnList.forEach(bn -> {
+				if (bn.getInt("type") == Material.TYPE_ITEM && bn.getInt("id") == 2734){
+					DB_LOG_GAIN_ITEM.incr(u.getUserId(), bn.getInt("num"));
+				}
+			});

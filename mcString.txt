@@ -1,0 +1,4 @@
+1. mc存String的例子: Lottery150403   超能宝箱向前冲150403
+MemcachedFacade.getInstance().setDailyObject(u.getUserId(), CMDHEAD, bonusIndexs);
+
+String bonusIndexsString = (String)MemcachedFacade.getInstance().getDailyObject(u.getUserId(), CMDHEAD);
