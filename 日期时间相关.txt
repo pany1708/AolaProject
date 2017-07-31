@@ -5,11 +5,11 @@ Java8的时间: 格式化日期时间
       LocalDateTime
 	  LocalTime
 	  Instant: 时间戳
-	  
+
    2) DateTimeFormatter
       DateTimeFormatterBuilder
 
-2.使用细节: 
+2.使用细节:
 LocalDateTime默认格式是yyyy-MM-dd-HH-mm-ss.zzz
 
 创建DateTimeFormatter格式器
@@ -51,7 +51,7 @@ System.out.println(df3.format(LocalDateTime.now()));
   F 一月中第几个星期几
   w 一年中第几个星期
   W 一月中第几个星期
-  a 上午 / 下午 标记符 
+  a 上午 / 下午 标记符
   k 时 在一天中 (1~24)
   K 时 在上午或下午 (0~11)
   z 时区
@@ -59,4 +59,9 @@ System.out.println(df3.format(LocalDateTime.now()));
 
 
 
+4. 星期
+java.time.LocalDate
 
+LocalDate date = LocalDate.now();
+index = date.getDayOfWeek().getValue();
+DayOfWeek.FRIDAY.getValue(); [1-7]

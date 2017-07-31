@@ -35,6 +35,8 @@ ScheduleManagement.getInstance().execute(() -> {
 sql: NewTops
 MostGloriousCQWMZW170728.java
 
+无需初始化. get(key);
+
 炫一下
 int buyResult = BuyService.instance.buy(u, SERVICE_SHARE, 1).getResult();
 if (buyResult == MaterialResult.SUCCESS) {
@@ -69,3 +71,7 @@ TopService.getInstance().submit(KEY, u.getUserId(),
 
 2). ActTop
    [20170707] SummerHolidayLegendNewForce
+
+
+4. 新的部分: ViewTopCache
+private static final ViewTopCache TOP = new ViewTopCache(CMDHEAD, 3 * 1000L, 0, 100);

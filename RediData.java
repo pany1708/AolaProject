@@ -17,3 +17,8 @@ private static final GlobalData DATA_GLOBAL_COUNT = GlobalData.newDataInstance("
 在mysql便于统计, RedisData里无法统计
 
 MC_GlobalData 的userId是0
+
+4. Redis里存放String
+
+RedisData.getRedisNode().get(REDIS_KEY);
+RedisData.getRedisNode().set(getRedisKey(u), StringUtil.join(alreadyCalledSet, COMMA));
