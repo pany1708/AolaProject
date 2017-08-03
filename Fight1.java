@@ -31,3 +31,7 @@ static {
 		}
 
 	}
+
+
+	PMMaster pmm = PMUtil.getPMMaster(user.getUserId()); // context在BreakAny中使用,必须保证正确值
+	BattleContext context = pmm.battleContext;
