@@ -73,5 +73,9 @@ TopService.getInstance().submit(KEY, u.getUserId(),
    [20170707] SummerHolidayLegendNewForce
 
 
-4. 新的部分: ViewTopCache
+4. 新的部分: ViewTopCache  [BKManager]破阵王
+
+sql: NewTops
+对应的sql语句: Job170505BreakKingTop
+
 private static final ViewTopCache TOP = new ViewTopCache(CMDHEAD, 3 * 1000L, 0, 100);
