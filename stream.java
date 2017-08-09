@@ -168,3 +168,11 @@ String str = stream.collect(Collectors.joining()).toString();
 List<String> output = wordList.stream().map(String::toUpperCase).collect(Collectors.toList());
 
 8.当一个 Stream 是并行化的，就不需要再写多线程代码，所有对它的操作会自动并行进行的。
+_________________________________________________________________________________________________________
+1.
+private String getTeamUserIds(Team team) {
+  String teamIds = Stream.of(team.users).map(u -> u == null ? "0" : String.valueOf(u.userId)).collect(Collectors.joining("#"));
+  return teamIds;
+}
+2.
+list.stream().forEach(ids -> rw.addWanted(ids));
