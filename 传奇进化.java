@@ -64,7 +64,7 @@ res.putInt("ie", DB_EVO.get(userId) > 0 ? 1 : 0); 已经进化
 		if (data[1] == 1) {
 			return -2;
 		}
-		int result = PMUtil.legendEvolve(u, petId, ID_SUPER_EVO, EVO_COST, res);
+		int result = PMUtil.legendEvolve(u, petId, ID_SUPER_EVO, "2::1 // 传奇x灵", res);
 		if (result == 1) {
 			DB_EVO.set(userId, 2);
 		}
