@@ -35,6 +35,9 @@ ScheduleManagement.getInstance().execute(() -> {
 sql: NewTops
 MostGloriousCQWMZW170728.java
 
+这类需要自己手动的在NewTopsDefine里插入数据
+INSERT INTO `NewTopsDefine` (`Name`, `TopNum`, `Desc`) VALUES ('MostGloriousHHWJ170825', 10000, 0);
+
 无需初始化. get(key);
 
 炫一下

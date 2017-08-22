@@ -27,3 +27,7 @@ int[] arr = ba.toIntArray();
 只有某一些的等级之下的pm才可以吸收技能,技能有上限
 
 7. 核心是PMUtil
+
+
+8.在战斗时的获取最高战力
+PMUtil.getPMMaster(userId).getMaxAllCE();

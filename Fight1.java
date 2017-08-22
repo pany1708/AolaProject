@@ -33,5 +33,7 @@ static {
 	}
 
 
-	PMMaster pmm = PMUtil.getPMMaster(user.getUserId()); // context在BreakAny中使用,必须保证正确值
-	BattleContext context = pmm.battleContext;
+PMMaster pmm = PMUtil.getPMMaster(user.getUserId()); // context在BreakAny中使用,必须保证正确值
+BattleContext context = pmm.battleContext;
+
+BossChallengeSeason.setUsePM(u, jba);  // 战斗阵容部署
