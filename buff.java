@@ -52,3 +52,11 @@ Act170630SummerBuff.addBuffToBoss(rw);  // 敌方
 
 暑假Buff: 上场亚比获得2级全属性
           暑假挑战Boss血量减少20%.
+
+-----------------------------------------------------------------------------------------------------------------
+buff的几个核心的参考：
+1. EachRoundAppendBuff.java
+2. SkillRange.java
+3. StatusUtil.java
+4. Status.java
+5. StatusType.java
