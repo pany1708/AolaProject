@@ -176,3 +176,24 @@ private String getTeamUserIds(Team team) {
 }
 2.
 list.stream().forEach(ids -> rw.addWanted(ids));
+3.
+Map<Data, Integer> setMap = new HashMap<>();
+IntStream.range(0, DB_BOOKS.length).forEach(i -> setMap.put(DB_BOOKS[i], data[i] - 1));
+4.
+int[] data = DbData.getMultiDataArray(u.getUserId(), DB_BOOKS);
+if(IntStream.of(data).anyMatch(d -> d <= 0)) {
+		return -2;
+}
+5.
+boolean hasGetAllBooks = evo || IntStream.of(data).allMatch(d -> d > 0);
+6.
+pojoList.stream().filter(pojo -> npMap.containsKey(pojo.FrUserId)).map(pojo -> {
+			ActionscriptObject ao = new ActionscriptObject();
+			NameParams np = npMap.get(pojo.FrUserId);
+			ao.putString("dd", np.getDuoduoId());
+			ao.putString("nn", np.getNickname());
+			ao.putLong("t", pojo.Time);
+			ao.putBool("g", pojo.IsGet);
+			ao.putBool("d", pojo.Done);
+			return ao;
+}).collect(Collectors.toList());
