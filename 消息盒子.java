@@ -9,3 +9,6 @@ private static final MessageBoxInformer INFORMER = MessageBox.registerBonusInfor
   }
     return MessageBox.STATUS_BONUS_NONE;
 });
+
+
+2. 注意消息盒子的方法和参数都是static的.

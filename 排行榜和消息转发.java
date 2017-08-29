@@ -82,3 +82,10 @@ sql: NewTops
 对应的sql语句: Job170505BreakKingTop
 
 private static final ViewTopCache TOP = new ViewTopCache(CMDHEAD, 3 * 1000L, 0, 100);
+
+5. 总结：
+ActTopService  ActivityTops      ActTopCache
+TopService     NewTops           ViewTopCache
+
+1)有Service的是直接从AppServer里读取的,
+2)有cache的是先从cache读取,有强制的冷却时间,写入数据库的时候是排队写入的.

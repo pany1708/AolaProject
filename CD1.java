@@ -27,3 +27,7 @@ public void onInternalEvent(SystemEvent ieo) {
 	 MC_LAST_LOGIN_REMAIN_TIME.set(userId, getCurOnLineTime(u, MC_LAST_LOGIN_REMAIN_TIME.get(userId)));
  }
 }
+
+
+3. 注意CdUtil.java的使用
+在CrystalBeanGame160429.java的360行处有使用
