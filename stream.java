@@ -197,3 +197,10 @@ pojoList.stream().filter(pojo -> npMap.containsKey(pojo.FrUserId)).map(pojo -> {
 			ao.putBool("d", pojo.Done);
 			return ao;
 }).collect(Collectors.toList());
+
+7.
+equipBuyedFlag = indexs.stream().reduce(equipBuyedFlag, BitUtil::set);
+
+int value = Stream.of(1, 2, 3, 4).reduce(100, (sum, item) -> sum + item);
+Assert.assertSame(value, 110);
+value = Stream.of(1, 2, 3, 4).reduce(100, Integer::sum);

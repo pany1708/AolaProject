@@ -59,4 +59,4 @@ buff的几个核心的参考：
 2. SkillRange.java
 3. StatusUtil.java
 4. Status.java
-5. StatusType.java
+5. StatusType.java 【最为重要】

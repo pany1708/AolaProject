@@ -84,3 +84,5 @@ public class BitUtil {
 ____________________________________________________________________________________________________
 
 1. Integer.bitCount()
+
+2. insert into  GbItemCount0(UserId, ItemId, Count) Values(111,111,1<<4) ON DUPLICATE KEY UPDATE Count=Count|VALUES(Count);
