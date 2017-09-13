@@ -1,0 +1,1 @@
+ScoreOutPutLog.instance.logScoreOutPut("寻宝记_晶豆消耗总量", u.getUserId(), price / 100);

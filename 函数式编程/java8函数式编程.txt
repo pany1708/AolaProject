@@ -1,2 +1,44 @@
-1. 为了编写这类处理批量数据的并行类库,在语言层面上增加了lambda表达式.
-2.
+1. 为了编写这类处理批量数据的并行类库,在语言层面上增加了lambda表达式.处理大型数据集合
+
+2.读书目标:
+1)如何编写简单,干净,易读的代码——尤其是对于集合的操作?
+2)如何简单的使用并行计算提高性能?
+3)如何测试和调试Lambda表达式?
+
+3.使用Lambda就是把复杂性抽象到类库的过程.常见类库的细节.
+
+4.List<String> collected = Stream.of("a","b").collect(Collectors.toList());
+
+5. flatMap():包含多个列表的流
+flatMap 可以用于把多个 Stream 连接成一个 Stream。
+
+List<Integer> list = Stream.of(Arrays.asList(1),Arrays.asList(2))
+    .flatMap(stream -> stream.stream())
+    .collect(Collectors.toList());
+
+    调用stream 方法， 将每个列表转换成Stream 对象， 其余部分由flatMap 方法处理。
+    flatMap 方法的相关函数接口和map 方法的一样，都是Function 接口，只是方法的返回值
+    限定为Stream 类型罢了。
+
+6. Track shortestTrack = tracks.stream().min(Comparator.comparing(track -> track.getLength())).get();
+为了让Stream 对象按照曲目长度进行排序，需要传给它一个Comparator 对象。Java 8 提
+供了一个新的静态方法comparing，使用它可以方便地实现一个比较器。放在以前，我们
+需要比较两个对象的某项属性的值，现在只需要提供一个存取方法就够了。本例中使用
+getLength 方法。
+
+
+7.reduce:
+int count = Stream.of(1, 2, 3).reduce(0, (acc, element) -> acc + element);
+
+8.方法引用:
+标准语法为Classname::methodName   Artist::new
+String[]::new
+
+9. .sorted(): 类似与HashSet
+
+10.收集器都是从java.util.stream.Collectors 类中静态导入的。
+
+11. String result = artists.stream().map(Artist::getName).collect(Collectors.joining(", ", "[", "]"));
+字符串分隔符,前后缀
+
+12.用parallelStream 方法即能并行处
