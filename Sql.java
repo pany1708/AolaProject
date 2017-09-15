@@ -5,4 +5,6 @@ DELETE FROM ActData4Mod{0} WHERE DataId in(771,772);
 
 连续的记录 between and
 
-2.
+2.  truncate table Act160429MayDayFreeGo;  清除一个表的数据
+
+　　delete from Act160429MayDayFreeGo;

@@ -204,3 +204,18 @@ equipBuyedFlag = indexs.stream().reduce(equipBuyedFlag, BitUtil::set);
 int value = Stream.of(1, 2, 3, 4).reduce(100, (sum, item) -> sum + item);
 Assert.assertSame(value, 110);
 value = Stream.of(1, 2, 3, 4).reduce(100, Integer::sum);
+
+
+8.
+
+int[] dbLightArr = ArrayUtils.subarray(dbData, flagLength + 2, dbData.length);
+		for (int data : dbLightArr) {
+			if (Arrays.stream(BitUtil.getFlagIntArray(data, EACH_MAP_NUM)).anyMatch(i -> i == 0)) { // 是否点亮了索引拼图
+				return -2;
+			}
+		}
+if (Arrays.stream(dbLightArr).parallel()
+		.mapToObj(data -> ArrayUtils.toObject(BitUtil.getFlagIntArray(data, EACH_MAP_NUM)))
+		.flatMap(Arrays::stream).anyMatch(i -> i == 0)) {
+	return -2;
+}

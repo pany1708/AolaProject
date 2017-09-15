@@ -34,3 +34,20 @@ new Thread(new Runnable() {
 new Thread(
     () -> System.out.println("Hello world")
 ).start();
+
+
+
+4. 优秀的教程:
+- [stream](http://www.itwendao.com/article/detail/480613.html)
+- [stream](http://www.jianshu.com/p/8912fc013d5f)
+- [Java 8之Collector](https://irusist.github.io/2016/01/04/Java-8%E4%B9%8BCollector/
+
+5.
+Comparator<Developer> byName = new Comparator<Developer>() {
+	@Override
+	public int compare(Developer o1, Developer o2) {
+		return o1.getName().compareTo(o2.getName());
+	}
+};
+
+Comparator<Developer> byName = (Developer o1, Developer o2)->o1.getName().compareTo(o2.getName());

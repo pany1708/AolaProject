@@ -1,0 +1,19 @@
+1. 相关的类: 文俊 + 南哥【防止外挂】;
+
+holiday: 20170630
+         Act170630SummerTrain.java + summertrain(文件夹);
+app:
+    summertrain(文件夹);
+    代表类: SummerTrainMatcher/SummerTrainService
+
+
+
+2. 170922防外挂需求:
+    消除确认之后，A播放消除动画的时间计时若超过了1分钟(暂定,之后根据体验看下是否再做调整),判A为负, 给A弹疑似外挂的次级面板.
+
+3. 整体功能：
+  1)人人对战
+  2)对局赛制
+
+
+4.功能实现以及概述
