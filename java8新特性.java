@@ -20,3 +20,6 @@ parallelPrefix将数组中每个元素替换为指定关联操作前缀的积累
 假设array [1, 2, 3, 4, ...]，执行完Arrays.parallelPrefix(values, (x, y) -> x * y)之后，array的结果为
 
 [1, 1 × 2, 1 × 2 × 3, 1 × 2 × 3 × 4, ...]
+
+
+3. http://ifeve.com/java-8-features-tutorial/  [推荐学习]
