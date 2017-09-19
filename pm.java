@@ -31,3 +31,23 @@ int[] arr = ba.toIntArray();
 
 8.在战斗时的获取最高战力
 PMUtil.getPMMaster(userId).getMaxAllCE();
+
+
+9.
+private boolean validNeedAllTXWS(PM pm, int studyId1, int studyId2, int characterId) {
+  if (PMUtil.validatePerfectLevel(pm)) {
+    return true;
+  }
+  if (PMUtil.validatePerfectGeniusTXWS(pm)) {
+    return true;
+  }
+  if (PMUtil.validatePerfectStudy(pm, studyId1, studyId2)) {
+    return true;
+  }
+  if (PMUtil.validatePerfectCharacter(pm, characterId)) {
+    return true;
+  }
+  return false;
+}
+
+10. 

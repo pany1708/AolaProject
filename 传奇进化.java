@@ -26,7 +26,7 @@ res.putInt("ie", DB_EVO.get(userId) > 0 ? 1 : 0); 已经进化
 		if (data[0] < MAKE_COSTS.length) { // 尚未做完蛋糕
 			return -1;
 		}
-		if (data[1] == 1) {// 已经超进化
+		if (data[1] != 0) {
 			return -2;
 		}
 		ArrayList<ActionscriptObject> bn = PMUtil.gainLegentPetEgg(u, petId, ID_SUPER_EVO);
@@ -61,7 +61,7 @@ res.putInt("ie", DB_EVO.get(userId) > 0 ? 1 : 0); 已经进化
 		if (data[0] < MAKE_COSTS.length) { // 尚未做完蛋糕
 			return -1;
 		}
-		if (data[1] == 1) {
+		if (data[1] != 0) {
 			return -2;
 		}
 		int result = PMUtil.legendEvolve(u, petId, ID_SUPER_EVO, "2::1 // 传奇x灵", res);
