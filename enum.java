@@ -45,3 +45,6 @@ NewPMParam newPMParam = new NewPMParam(raceId, 1, 2);
 for(PerfectOption perfectOption : PERFECT_OPTIONS[index]) {
    perfectOption.perfectParamConsumer.accept(newPMParam);
 }
+
+
+2. eg:  http://www.cnblogs.com/zhaoyanjun/p/5659811.html

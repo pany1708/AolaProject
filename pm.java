@@ -50,4 +50,7 @@ private boolean validNeedAllTXWS(PM pm, int studyId1, int studyId2, int characte
   return false;
 }
 
-10. 
+10.
+背包首宠
+ArrayList<PM> pmList = PMUtil.getAllPMInTheBag(userId);
+jba.customSinglePMForBattle(pmList.get(0));
