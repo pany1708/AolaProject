@@ -15,3 +15,5 @@
 
   2)  ExecutorService executor = Executors.newCachedThreadPool();
       FutureTask<Integer> futureTask = new FutureTask<Integer>(new Callable<Integer>());
+
+6. Future cancel():
