@@ -12,3 +12,6 @@ if (!BuddyService.instance.isBuddy(u, duoduoId)) {
 3. u.getName() 得到多多号  8位
 
 4. ServerHelper.getUserNickName(u) 得到昵称
+
+
+User u = ExtensionHelper.instance().getUserById(userId);

@@ -47,3 +47,17 @@ Semaphore可以控同时访问的线程个数,通过acquire()获取一个许可,
 　　　　另外，CountDownLatch是不能够重用的，而CyclicBarrier是可以重用的。
 
 　　2) Semaphore其实和锁有点类似，它一般用于控制对某组资源的访问权限。
+
+
+5.
+    1.jdk1.5中提供了硬件级别的同步原语(compareAndSwap)来提高同步效率;
+    2.在java层面提供了一个设计良好的抽象同步器AbstractQueuedSync. java.concurrent.util包粽所有的同步器
+       (ReentrantLock,CountDownLatch等)都基于这个抽象类.
+
+
+6. 乐观锁(采用CAS的方式), 并且提供硬件级别的同步原语来提升性能.
+
+
+7. 同步器: AbstractQueuedSync: 同步器背后的基本思想非常简单, 只需两个操作acquire(获取资源)和release(释放资源).
+
+8. 

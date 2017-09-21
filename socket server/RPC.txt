@@ -1,0 +1,8 @@
+1. RPC（Remote Procedure Call Protocol）远程过程调用协议; RPC简单的来说就是像调用本地服务一样调用远程服务。
+   netty解决网络传输
+
+2. 基本的rpc框架功能
+    断线重连
+    并发控制
+    读写超时
+    连接超时
