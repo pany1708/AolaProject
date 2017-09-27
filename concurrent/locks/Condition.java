@@ -7,3 +7,10 @@
 5. Condition的强大之处在于它可以为多个线程间建立不同的Condition， 使用synchronized/wait()只有一个阻塞队列，notifyAll会唤起所有
    阻塞队列下的线程，而使用lock/condition，可以实现多个阻塞队列，signalAll只会唤起某个阻塞队列下的阻塞线程。
 6. 生产者和消费者模型
+
+
+7. Lock lock = new ReentrantLock();
+   Condition condition = lock.newCondition();
+
+8. 每一个Condition对象都包含着一个等待队列是一个FIFO的队列，队列的每一个节点都包含了一个线程引用，
+   该线程就是在Condition对象上等待的线程，如果一个线程调用了await()方法，该线程就会释放锁、构造成节点进入等待队列并进入等待状态。

@@ -10,3 +10,7 @@
   2) Socket入场附带的Buff
 
 4. 核心架包位置:pbserver——>pmbattle.server——>status包.
+
+5. 宠物上下场都会清除一次身上的buff，加上这个buffReset=false是为了防止socket带过来的buff被清除.
+
+6. 
