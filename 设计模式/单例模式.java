@@ -1,4 +1,4 @@
-1. 基于volatile上网双重检查锁定的解决方案:
+1. 基于volatile上双重检查锁定的解决方案:
 public class SingleInstance {
   private static volatile SingleInstance sInstance;
   private SingleInstance() {
