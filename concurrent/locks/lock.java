@@ -40,7 +40,7 @@
   2) 可中断锁: 可以响应中断的锁.
     synchronized就不是可中断锁，而Lock是可中断锁.lockInterruptibly()的用法时已经体现了Lock的可中断性。
 
-   3) 公平锁: 已请求线程的顺序来获取锁.
+   3) 公平锁: 已请求线程的顺序来获取锁. fair / unfair
      synchronized就是非公平锁，它无法保证等待的线程获取锁的顺序。
      而对于ReentrantLock和ReentrantReadWriteLock，它默认情况下是非公平锁，但是可以设置为公平锁。
 
