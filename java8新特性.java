@@ -23,3 +23,18 @@ parallelPrefix将数组中每个元素替换为指定关联操作前缀的积累
 
 
 3. http://ifeve.com/java-8-features-tutorial/  [推荐学习]
+
+
+4. 比较2个对象.
+  推荐的:
+          1) "test".equals(object);
+             object.equals("test"); //  容易抛出空指针异常
+          2)推荐jdk7里的 java.util.Objects#equals
+
+  [理解Java Integer的缓存策略](http://www.importnew.com/18884.html)
+
+  自动装箱时发生:
+     jdk5引入的新特性, 用来节省内存和提供性能, 通过使用相同的对象引用实现了缓存和重用.
+  整数区间 -128 到 +127。 IntegerCache.cache
+  
+5.
