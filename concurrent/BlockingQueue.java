@@ -20,7 +20,9 @@
      LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。
      LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。
 
-4)   BlockingQueue的经典用途是 生产者-消费者模式 
+4)   BlockingQueue的经典用途是 生产者-消费者模式
 
 
 2. DelayQueue是一个BlockingQueue，其特化的参数是Delayed
+
+3. LinkedTransferQueue: 采用的一种预占模式,

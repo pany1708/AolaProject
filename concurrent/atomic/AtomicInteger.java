@@ -26,3 +26,12 @@
 7. 在Java8增加了： DoubleAccumulator、DoubleAdder、LongAccumulator、LongAdder这四个类用于累积计数。
 
 8. 【推荐】 http://blog.csdn.net/Holmofy/article/details/73743279
+
+6.2
+  AtomicMarkableReference、AtomicStampedReference 解决ABA问题:
+
+  AtomicStampedReference: 解决自旋CAS【循环CAS】的ABA问题,  有邮戳的, 在AtomicReference类的再一次包装
+
+  AtomicMarkableReference 有标记的
+
+  二者使用的计数器不同,

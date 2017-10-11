@@ -8,4 +8,4 @@
 
 5. 因为Random用了很多CAS的类，ThreadLocalRandom根本没有用到。
 
-6. 在JDK7中java.util.concurrent包含了一个相当便利的类ThreadLocalRandom,当应用程序期望在多个线程或ForkJoinTasks中使用随机数时.
+6. 在JDK7中 java.util.concurrent包含了一个相当便利的类ThreadLocalRandom,当应用程序期望在多个线程或ForkJoinTasks中使用随机数时.

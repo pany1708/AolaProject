@@ -13,4 +13,10 @@
 
 5. 宠物上下场都会清除一次身上的buff，加上这个buffReset=false是为了防止socket带过来的buff被清除.
 
-6. 
+6. 值得研究的buff
+
+清空BUFF
+
+回合末转移PP
+
+DelayBuff [TODO]

@@ -17,3 +17,6 @@
       FutureTask<Integer> futureTask = new FutureTask<Integer>(new Callable<Integer>());
 
 6. Future cancel():
+
+
+7. 
