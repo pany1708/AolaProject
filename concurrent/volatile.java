@@ -28,3 +28,5 @@
    只有一个CPU访问内存时，并不需要内存屏障
 
 6. [推荐教程](http://www.cnblogs.com/zhengbin/p/5654805.html)
+
+7. 实际上final的语义和volatile是有冲突的，这两个关键字不能同时存在。
