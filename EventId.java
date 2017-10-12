@@ -8,4 +8,15 @@
 
 insert into ButtonIdDefine(ButtonId,Define)values('11474','开学狂欢特惠专场_输出A星亚比军团蛋_总数');
 
-自己写个辅助程序跑这个,输出sql
+脚本： rpglog
+
+eventId=24784
+
+4. ButtonId:
+
+LogHandler.putLogCommand(new ButtonLog(BUTTON_IDS_SHOP_ITEM[index]));
+
+脚本:   rpglog
+
+select buttonId,value@count from rpglog.ButtonLog where buttonId in (#buttonId#)
+buttonId=11833
