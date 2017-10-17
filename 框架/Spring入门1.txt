@@ -1,0 +1,17 @@
+1. 框架搭建的介绍:
+   1) 解决javaBean的依赖管理——>spring
+   2) 解决数据库访问操作——>Mybatis
+   3) 解决业务逻辑和视图代码的分离——>SpringMVC.
+
+
+2. 框架结构图1的解析:
+  1) SpringSecurity: 是一个灵活和强大的身份验证和访问控制框架——>权限控制
+  2) Quartz是一个开源的作业调度框架——>定时任务调度
+  3) Druid是阿里的数据库连接池——>数据库连接池
+  4) LockBack是日志系统——>取代log4j.
+
+  关于日志系统log：
+    java日志有: slf4j,log4j,logback,common-logging
+    slf4j: 是规范/接口
+    日志实现: log4j, logback, common-logging等
+    Logback是由log4j创始人设计的又一个开源日志组件.
