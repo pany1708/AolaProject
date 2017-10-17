@@ -1,0 +1,33 @@
+1. Scoop是由Homebrew启发的Windows的命令行安装程序。
+
+   powershell的使用:
+
+   1) cmd: powershell
+   2) powershell:
+        验证版本： $host.version 或者 Get-Host
+        清屏: clear
+
+2. 安装包管理器,windows上是Scoop.
+
+   升级到powershell3.0  http://www.cnblogs.com/freeliver54/p/6383228.html
+
+   安装Scoop:
+      1) iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+	    2) Set-ExecutionPolicy -s cu unrestricted  (y)
+	    3) scoop help
+   Scoop install  gradle   https://gradle.org/install/
+
+3. Gradle是流行的构建工具.
+
+   gradle -v
+
+   gradle list
+
+4. 完整安装好gradle,后续的升级和使用: https://gradle.org/【官网】
+
+
+5. 附注： Scoop是非常有用的工具： http://scoop.sh/ 【官网】
+
+   提供了完整的类似与linux的包管理器.
+
+   
