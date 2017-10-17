@@ -30,4 +30,4 @@
 
    提供了完整的类似与linux的包管理器.
 
-   
+6. eclipse插件 buildship

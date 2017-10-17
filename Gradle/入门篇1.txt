@@ -26,3 +26,14 @@
 因为它描述了哪一个项目参与构建。每一个多项目的构建都必须在项目结构的根目录中加入一个设置文件。
 
 5. [Gradle基础插件库](https://docs.gradle.org/current/userguide/standard_plugins.html)
+
+
+6. 教程：
+
+   1) http://www.yiibai.com/gradle/
+   2) http://www.cnblogs.com/davenkin/p/gradle-learning-1.html
+
+   3) eclipse + Gradle
+      http://www.roncoo.com/article/detail/126170
+
+    eclipse插件 buildship
