@@ -37,3 +37,10 @@
       http://www.roncoo.com/article/detail/126170
 
     eclipse插件 buildship
+
+7. 构建工具的进化:
+   ant ——> maven ——> gradle
+
+8. Gradle的配置是Groovy脚本(基于java)
+
+9. 运行test.groovy文件： groovy ./test.groovy

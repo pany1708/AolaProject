@@ -19,7 +19,7 @@
 
 3. Gradle是流行的构建工具.
 
-   gradle -v
+   gradle -v   4.2.1<最新版本>
 
    gradle list
 
