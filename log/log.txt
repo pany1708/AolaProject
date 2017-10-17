@@ -13,7 +13,6 @@ Logger.debug(String.format("概率数组:(%s), 概率总和:%s, 随机数:%s, �
 
 5.
     1) Logger logger = LoggerFactory.getLogger(Program.class);
-    2) Logger logger = LoggerFactory.getLogger(this.class);
     logger.info("hello world");
 
 6. Logger可以被分配级别。级别包括：TRACE、DEBUG、INFO、WARN和ERROR。
