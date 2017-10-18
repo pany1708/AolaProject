@@ -20,9 +20,11 @@
 4. 序列化时：只会对对象的状态进行保存,而不管对象的方法.
 
 
-5. 饭序列化
+5. 反序列化
   //反序列化,将该对象恢复(存储到字节数组)
   ObjectInputStream ois2 = new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()));
   s = (String)ois2.readObject();
   p = (Person)ois2.readObject();
   System.out.println(s + p);
+
+6. 标记接口Serializable，用于表明HashMap对象可以被序列化

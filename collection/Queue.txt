@@ -1,0 +1,39 @@
+1. 结构理解:
+
+   Collection ——> Queue ——> PriorityQueue       |——> ArrayDeque
+                   |——> Deque ————————————————> |
+                                                |——> LinkedList
+
+2. Queue: front删除,rear插入
+
+   不能处理异常的方法： add, remove, element
+   解决异常而提出的方法,返回特殊值: offer, poll [返回boolean], peek[返回null]
+
+3. PriorityQueue: 元素可以默认自然排序或者通过提供的Comparator排序.
+
+   【最小的值拥有最高的优先级】
+
+
+4. ArrayDeque:
+
+    Java里有一个叫做Stack的类，却没有叫做Queue的类（它是个接口名字）。当需要使用栈时，Java已不推荐使用Stack，而是推荐使用更高效的
+ArrayDeque；既然Queue只是一个接口，当需要使用队列时也就首选ArrayDeque了（次选是LinkedList).
+
+要讲栈和队列，首先要讲Deque接口。Deque的含义是“double ended queue”，即双端队列，它既可以当作栈使用，也可以当作队列使用.
+
+5. ArrayDeque和LinkedList是Deque的两个通用实现，由于官方更推荐使用AarryDeque用作栈和队列.
+
+6. ArrayDeque:
+
+  底层通过循环数组实现,非线程安全,该容器不允许放入null元素.
+
+  参见2个图: Deque与Queue,Stack的对应接口关系.
+
+    ArrayDeque基本特征:
+  就其实现而言，ArrayDeque采用了循环数组的方式来完成双端队列的功能。
+  1. 无限的扩展，自动扩展队列大小的。（当然在不会内存溢出的情况下。）
+  2. 非线程安全的，不支持并发访问和修改。
+  3. 支持fast-fail.
+  4. 作为栈使用的话比比栈要快.
+  5. 当队列使用比linklist要快。
+  6. null元素被禁止使用。
