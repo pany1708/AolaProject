@@ -41,4 +41,8 @@ for (int i : arr) {
 res.putASObjectList("bn", BonusManager.addBonusWithoutValidation(u, bonus.toString(), 1));
 
 
-// 4.
+// 4. 随机金装
+
+"8:433-1&521-1&437-1&525-1:4:1",
+
+BonusUtil.genRandomCard(Arrays.asList(4), null, 1)

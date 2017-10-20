@@ -1,16 +1,3 @@
-EventDispatcher.dispatch(new UserLoginEvent(user, userInfo));
-
-
-@EventInject(UserLoginEvent.class)
-public void listen(UserLoginEvent event) {
-   User u = event.u;
-   if(LocationService.getCurrentLocationEnum() == LocationEnum.DIAN_XIN && u.getName().equals("900030896")){
-      ServerHelper.setUserVariable(u, UV_KEY, 0);
-   }
-}
-
-
---------------------------------------------------------------------------------------------------------------------
 @EventInject(ActBreakKingPassEvent.class)
 public void onActBreakKingPassEvent(ActBreakKingPassEvent event){
   handleListenEvent(event.u, HolidayFightMission.破阵王通过1次挑战);
@@ -35,5 +22,26 @@ public void login(UserLoginEvent e) {
   if (DB_INIT_HP.get(e.u.getUserId()) == 0) {
     DB_CUR_HP.set(e.u.getUserId(), 99);
     DB_INIT_HP.set(e.u.getUserId(), 1);
+  }
+}
+
+
+
+@Override
+public void onInternalEvent(SystemEvent ieo) {
+  if (ieo.eventType == SystemEvent.Lost) {
+    User u = ieo.user;
+    try {
+//				Integer userVarEnter = VAR_ENTER.getRaw(u); // 注意去看UserVarData的实现
+//				int enterFlag = (userVarEnter == null) ? 0 : userVarEnter.intValue();
+      if (VAR_ENTER.get(u.getUserId()) == 1) {
+        startCD(u);
+      }
+    } catch (Exception e) {
+      Logger.info("百万经验吃出来活动掉线之后,cd开启异常");
+    } finally {
+      VAR_ENTER.clear(u.getUserId());
+      VAR_GET.clear(u.getUserId());
+    }
   }
 }

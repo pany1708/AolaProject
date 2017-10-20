@@ -37,3 +37,7 @@ PMMaster pmm = PMUtil.getPMMaster(user.getUserId()); // context在BreakAny中使
 BattleContext context = pmm.battleContext;
 
 BossChallengeSeason.setUsePM(u, jba);  // 战斗阵容部署
+
+//
+int ce = CombatEffectiveness.getCombatEffectiveness(pm);
+int ce = PMUtil.getPMMaster(userId).getMaxAllCE()
