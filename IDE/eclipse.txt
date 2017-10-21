@@ -2,4 +2,14 @@
 
 2. alibaba的java IDE插件: https://github.com/alibaba/p3c
 
-3. 
+3. 新的快捷键:
+   http://www.cnblogs.com/dongtian/p/5716843.html
+
+   http://blog.csdn.net/ffei060828/article/details/41812203
+
+4.
+全局 抽取方法 Alt+Shift+M
+
+全局 抽取局部变量 Alt+Shift+L
+
+重写父类的方法    alt + /

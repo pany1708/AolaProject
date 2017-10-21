@@ -32,3 +32,5 @@
   当序列化一个HashMap对象时，保存Entry的table是不需要序列化进来的,
   HashMap重写了writeObject与readObject 方法
   在序列化时，针对Entry的key与value分别单独序列化，当反序列化时，再单独处理即可
+
+6. hashmap是可以
