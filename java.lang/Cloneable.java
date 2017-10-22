@@ -1,38 +1,46 @@
-1. 浅复制:
+1. 对象的clone,在堆里存在2个一样的对象.
+   protected native Object clone() throws CloneNotSupportedException;
 
-2. 深复制: 把要复制的对象所引用的对象都复制了一遍.
+2. 实现Cloneable接口,重写clone();
 
-3. Object 类的 clone 方法执行特定的复制操作。首先，如果此对象的类不能实现接口 Cloneable，则会抛出 CloneNotSupportedException
-注意，所有的数组都被视为实现接口 Cloneable。否则，此方法会创建此对象的类的一个新实例，并像通过分配那样，严格使用此对象相应字段的
-内容初始化该对象的所有字段；这些字段的内容没有被自我复制。所以，此方法执行的是该对象的“浅表复制”，而不“深层复制”操作。
-
-4. Object 类本身不实现接口 Cloneable，所以在类为 Object 的对象上调用 clone 方法将会导致在运行时抛出异.
-
-5. Object的clone方法的说明：
-在运行时刻，Object中的clone()识别出你要复制的是哪一个对象，然后为此对象分配空间，并进行对象的复制，将原始对象的内容一一复制到新对
-象的存储空间中。
-
-继承自java.lang.Object类的clone()方法是浅复制。
-
-6. Java中实现对象的克隆：
-  1)为了获取对象的一份拷贝，我们可以利用Object类的clone()方法。
-  2)在派生类中覆盖基类的clone()方法，并声明为public。
-  3)在派生类的clone()方法中，调用super.clone()。
-  4)在派生类中实现Cloneable接口（一个标识性的接口）。
-
-7. eg:
-
-  // 实现clone方法,浅拷贝
   @Override
-  protected Stack clone() throws CloneNotSupportedException {
-
-      return (Stack) super.clone();
+  public Object clone() throws CloneNotSupportedException{
+   return super.clone();
   }
 
-  //深拷贝
-  @Override
-  protected Stack clone() throws CloneNotSupportedException {
-      Stack result = (Stack) super.clone();
-      result.elements = elements.clone(); //对elements元素进行拷贝（引用或基本数据类型）
-      return result;
-  }
+3. 深复制:
+public class testDeepClone implements Cloneable {
+    public int num = 0;
+    public String str = "default";
+    public A a;
+
+    public Object clone() throws CloneNotSupportedException {
+        testDeepClone o = (testDeepClone) super.clone(); // 仅仅实现了浅复制
+        o.str = new String(this.str);
+        o.a = (A) a.clone();
+        return o;
+    }
+}
+
+// 成员属性A必须为Cloneable的，否则无法Clone其组合的类
+class A implements Cloneable {
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+4. 如果一个类重写了 Object 内定义的 clone() ，需要同时实现 Cloneable 接口（虽然这个接口内并没有定义 clone() 方法），
+否则在调用 clone() 时会报 CloneNotSupportedException 异常，也就是说， Cloneable 接口只是个合法调用 clone()
+的标识（marker-interface）.
+
+5. 利用Serializable进行深拷贝的时候成员属性也必须是Serializable的，否则只返回一个引用.
+
+6. 特别注意数组的clone(): java中数组类都是默认实现了Cloneable接口【java语法规定】
+  数组的clone，仅仅复制的是数组中的元素，即若数组中元素为引用类型，仅仅复制引用
+  1) 一维数组
+  2) 二维数组: 浅复制
+  3) 多维的非基本类型: 浅复制
+
+
+  Arrays类的copyOf()和copyOfRange()可以实现数组的复制,底层调用Systems的arraycopy()
+  Systems的arraycopy() 浅复制
