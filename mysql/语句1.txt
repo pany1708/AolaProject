@@ -1,0 +1,64 @@
+1. 删除整个表的所有数据的:
+
+  delete from table1 where
+
+  truncate table table1; <推荐这个>
+
+2. 删除一个表：
+
+  drop table table1;
+
+  DROP TABLE IF EXISTS UsersLogin20130207Before{0};
+
+
+3. create:
+
+CREATE TABLE IF NOT EXISTS `IceFireFight1710270` (
+  `UserId` int(10) unsigned NOT NULL,
+  `FrUserId` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`UserId`,`FrUserId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+unsigned:
+  mysql提供了五种整型： tinyint、smallint、mediumint、int和bigint。int为integer的缩写。这些类型在可表示的取值范围上是不同的。
+整数列可定义为unsigned从而禁用负值；这使列的取值范围为0以上。各种类型的存储量需求也是不同的。取值范围较大的类型所需的存储量较大
+
+mysql 提供三种浮点类型： float、double和decimal.
+
+collate utf8_bin: 字段值的大小写由mysql的校对规则来控制.
+  校对规则以其相关的字符集名开始，通常包括一个语言名，并且以_ci（大小写不敏感）、_cs（大小写敏感）或_bin（二元）结束.
+  eg: utf8_general_ci, utf8_general_cs, utf8_bin表示二进制比较,区分大小写.
+
+指定字符集为utf8
+
+CREATE TABLE `IceFireFight171027{0}` (
+  `UserId` INT(10) UNSIGNED NOT NULL,
+  `FrUserId` INT(10) UNSIGNED NOT NULL,
+   PRIMARY KEY (`UserId`, `FrUserId`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+4. mysql中控制数据库名和表名的大小写敏感由参数lower_case_table_names控制，为0时表示区分大小写，为1时，表示将名字转化为小写后存
+储，不区分大小写。字段名通常都是不区分大小写的
+
+5. MySQL在Windows下都不区分大小写:
+  在MySQL的配置文件my.ini中增加一行：lower_case_table_names = 0
+  其中 0：区分大小写，1：不区分大小写
+
+  show variables like '%lower_case_table_names%';
+
+6. mysql中engine=innodb和engine=myisam的区别
+  Engine: 如何存储数据,如何为存储的数据建立索引和如何更新、查询数据等的实现方式.
+
+  InnoDB 它提供了事务、行级锁机制和外键约束的功能.
+
+  show engines;
+
+  一般把这些核心功能分为四类:支持的字段和数据类型、锁定类型、索引和处理。
+
+  表锁定，这种锁定是在MyISAM中提供的.
+
+  行级锁定提供了最佳的并行访问功能,只有InnoDB存储引擎支持行级锁定.
+
+7. [数据库原理](http://blog.jobbole.com/100349/)

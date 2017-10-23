@@ -1,7 +1,14 @@
-select UserId,DataId,Count from ActData8Mod%s where DataId in (#DataId#)
+1.  IceFireFightDao：
 
-DataId=1142 and Count>=1
-DataId=1115 and isFlagset(Count,1)
+对应的分库分表的sql:
+CREATE TABLE `IceFireFight171027{0}` (
+  `UserId` INT(10) UNSIGNED NOT NULL,
+  `FrUserId` INT(10) UNSIGNED NOT NULL,
+   PRIMARY KEY (`UserId`, `FrUserId`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
 
-无需指定 select UserId,DataId,Count from ActData8Mod%s where DataId in (#DataId#)
-eventId=24193
+2. 分库分表的执行工具: tools ——> partsql_executor
+
+3. 

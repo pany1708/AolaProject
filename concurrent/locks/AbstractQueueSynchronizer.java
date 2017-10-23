@@ -3,3 +3,7 @@
 2. 分为: 独占式和共享式(ReentrantLock).
 
 3. 内部依赖一个FIFO来完成同步状态的管理.
+
+4. 各种锁和同步器的通用组件是AbstractQueueSynchronizer.
+
+5. 

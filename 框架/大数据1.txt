@@ -1,0 +1,18 @@
+1. java最大的优势是在大数据领域的地位,很多大数据架构通过java来完成的.
+
+2. java + linux
+
+3. 学Linux对快速掌握大数据相关技术有很大的帮助，能让你更好的理解hadoop、hive、hbase、spark等大数据软件的运行环境和网络环境配置。
+
+4. 学习shell,理解和配置大数据集群.
+
+5. Hadoop的学习,Hadoop里面包含了组件HDFS,MapReduce和YARN,
+   HDFS: 文件系统; 大数据存储
+   MapReduce: 数据的批处理;
+   YARN: Hadoop平台概念的关键,大数据生态软件可以借助它跑在Hadoop上运行了.
+
+
+6. Python写网络爬虫.
+
+7. Hadoop，Spark和Storm是目前最重要的三大分布式计算系统，Hadoop常用于离线的复杂的大数据处理，Spark常用于离线的快速的大数据处理，
+  而Storm常用于在线的实时的大数据处理。

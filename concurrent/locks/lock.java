@@ -75,4 +75,8 @@
 
    jdk8中彻底放弃了锁分段技术,核心是CAS操作.
 
-   
+
+11.  锁的核心AQS同步器
+
+毫不夸张的说，各种锁ReentrantLock、ReentrantReadWriteLock以及各种同步器诸如Semaphore、CountDownLatch等等，
+其核心都是AbstractQueuedSynchronizer（AQS同步器）

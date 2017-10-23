@@ -9,3 +9,6 @@
 3. ReadLock可以被多个线程持有并且在作用时排斥任何的WriteLock，而WriteLock则是完全的互斥。
 
 4. LogParticipationHandler{读写锁的应用+hashMap}
+
+5. volatile只保证可见性,在1写N读的情况下足够了.
+   N写N读,还要保证数据一致性而又减少并行度的损失,ReentrantReadWriteLock.
