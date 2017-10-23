@@ -6,10 +6,9 @@
 
 4. java.util.concurrent.CopyOnWriteArrayList等而不是Vector.
 
-
 5. Stack：
 
-如果你要使用Stack做类似的业务.那么非线程的你可以选择linkedList,多线程情况你可以选择java.util.concurrent.ConcurrentLinkedDeque 或者java.util.concurrent.ConcurrentLinkedQueue
-
+如果你要使用Stack做类似的业务.那么非线程的你可以选择linkedList,多线程情况你可以选择java.util.concurrent.ConcurrentLinkedDeque
+或者java.util.concurrent.ConcurrentLinkedQueue
 
 6. 这个是被遗弃的类,不建议使用.
