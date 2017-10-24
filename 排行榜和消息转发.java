@@ -10,18 +10,15 @@ static {
 	for (int i = 0; i < REDIS_KEY.length; ++i) {
 		REDIS_KEY[i] = CMDHEAD + "_num" + i;
 	}
-	ACT_TOP.setTransformer(new IActTopTransformer() {
-		@Override
-		public ActionscriptObject transform(ActTopInfo info) {
+	ACT_TOP.setTransformer(info -> {
 			ActionscriptObject ao = new ActionscriptObject();
 			String infoStr = info.getAttachment();
 			int index = infoStr.indexOf(STR_KEY);
 			ao.putString("dd", infoStr.substring(0, index));
-			int index2 = infoStr.indexOf(STR_KEY, index+1);
-			ao.putString("nn", infoStr.substring(index+1, index2));
-			ao.putString("news", infoStr.substring(index2+1));
+			int index2 = infoStr.indexOf(STR_KEY, index + 1);
+			ao.putString("nn", infoStr.substring(index + 1, index2));
+			ao.putString("news", infoStr.substring(index2 + 1));
 			return ao;
-		}
 	});
 }
 

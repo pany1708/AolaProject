@@ -1,0 +1,9 @@
+1. 服务器event的实现:
+
+2. 和holiday同级的event包
+
+3. 一个类内只能注册一个Event.
+   @EventInject(ActBreakKingPassEvent.class)只能出现一次.
+   这个函数只能有一个参数：是 Class<? extends Event>
+
+4. 理解实现的原理

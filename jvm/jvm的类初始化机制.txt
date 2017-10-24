@@ -1,1 +1,3 @@
 1. [必看](http://liujiacai.net/blog/2014/07/12/order-of-initialization-in-java/)
+
+2. [深入](https://www.ibm.com/developerworks/cn/java/j-lo-classloader/index.html)

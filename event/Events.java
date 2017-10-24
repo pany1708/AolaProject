@@ -14,6 +14,10 @@ public class ActBreakKingPassEvent extends Event {
 	}
 }
 ------------------------------------------------------------------------------------------------------------------
+
+大量被应用的场景: 蓝宝周年抢先看170922  [BlueGemAnniversaryFirstSee]
+
+------------------------------------------------------------------------------------------------------------------
 eg: Act170818LegendMingWang
 
 在HolidayResponder中监听
@@ -25,23 +29,10 @@ public void login(UserLoginEvent e) {
   }
 }
 
-
-
 @Override
 public void onInternalEvent(SystemEvent ieo) {
   if (ieo.eventType == SystemEvent.Lost) {
     User u = ieo.user;
-    try {
-//				Integer userVarEnter = VAR_ENTER.getRaw(u); // 注意去看UserVarData的实现
-//				int enterFlag = (userVarEnter == null) ? 0 : userVarEnter.intValue();
-      if (VAR_ENTER.get(u.getUserId()) == 1) {
-        startCD(u);
-      }
-    } catch (Exception e) {
-      Logger.info("百万经验吃出来活动掉线之后,cd开启异常");
-    } finally {
-      VAR_ENTER.clear(u.getUserId());
-      VAR_GET.clear(u.getUserId());
-    }
+    // 注意这里从userId获取user是很艰难的
   }
 }
