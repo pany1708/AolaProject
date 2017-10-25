@@ -1,0 +1,6 @@
+1. Collector接口是为了Stream元素转换成其它值提供的.
+2. Collectors工具类中有很多Collector接口的实现.
+3. 分组:
+    stream.collect(Collectors.groupingBy())
+    得到是是个map<key,list<T>>
+4. [万能的Collecotr](http://blog.csdn.net/IO_Field/article/details/54971608)

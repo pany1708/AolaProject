@@ -10,4 +10,16 @@
 4. lambda内部可以使用静态、非静态和局部变量，这称为lambda内的变量捕获。
   只能读而不能写.
 
-5.
+5. Comparator不是标准的SAM类型,但也可以使用lambda简写.
+   分析:
+       1) default方法可以被排外.
+       2) equals是从object类继承的.
+       
+Comparator<Developer> byName = new Comparator<Developer>() {
+ @Override
+ public int compare(Developer o1, Developer o2) {
+     return o1.getName().compareTo(o2.getName());
+ }
+};
+
+Comparator<Developer> byName =  (o1, o2)->o1.getName().compareTo(o2.getName());
