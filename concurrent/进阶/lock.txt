@@ -1,0 +1,21 @@
+1. Lock实现提供了比使用synchronized方法和语句可获得的更广泛的锁定操作.此实现允许更灵活的结构,可以具有差别很大的属性,可以支持多个相关的Condition对象
+2. API说明:
+// 获取锁
+void lock()
+
+// 如果当前线程未被中断，则获取锁
+void lockInterruptibly()
+
+// 返回绑定到此 Lock 实例的新 Condition 实例
+Condition newCondition()
+
+// 仅在调用时锁为空闲状态才获取该锁
+boolean tryLock()
+
+// 如果锁在给定的等待时间内空闲，并且当前线程未被中断，则获取锁
+boolean tryLock(long time, TimeUnit unit)
+
+// 释放锁
+void unlock()
+
+3. 
