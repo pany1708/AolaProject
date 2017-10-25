@@ -10,5 +10,3 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 2. 分库分表的执行工具: tools ——> partsql_executor
-
-3. 

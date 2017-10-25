@@ -70,3 +70,7 @@ DayOfWeek.FRIDAY.getValue(); [1-7]
 5. 时间
 private static final long FIRST_WEEK_END_TIME = DateUtil.getMillisecond(2017, 10, 6, 0, 0, 0);
 System.currentTimeMillis() < FIRST_WEEK_END_TIME;
+
+
+
+Long.valueOf(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm")));
