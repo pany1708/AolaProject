@@ -22,4 +22,16 @@ return Optional.ofNullable(u).map(user -> user.name).orElse("Unknown");
    这3个是为了应付 double, int, long.
    Optional<T> ---- 存入的是obj.
 
-6. 
+6.
+private int getLikeCount(int id, ArrayList<ClothesContributionLike> likes) {
+    int likeCount = 0;
+    for(ClothesContributionLike item : likes) {
+        if(id == item.id) {
+            likeCount = item.likeCount;
+            break;
+        }
+    }
+    return likeCount;
+}
+
+return likes.stream().filter(item -> item.id == id).findFirst().orElse(new ClothesContributionLike(0, 0)).likeCount;
