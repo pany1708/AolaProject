@@ -38,6 +38,6 @@ BattleContext context = pmm.battleContext;
 
 BossChallengeSeason.setUsePM(u, jba);  // 战斗阵容部署
 
-//
-int ce = CombatEffectiveness.getCombatEffectiveness(pm);
-int ce = PMUtil.getPMMaster(userId).getMaxAllCE()
+// 获取最高CE
+int ce = CombatEffectiveness.getCombatEffectiveness(pm);【最强荣耀系列】
+int ce = PMUtil.getPMMaster(userId).getMaxAllCE(); 【战斗的最高战力】

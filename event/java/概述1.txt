@@ -1,0 +1,10 @@
+1. java的事件机制: 事件, 时间监听器, 事件源.
+2. java相关类: EventObject, EventListener, EventListenerProxy.
+
+
+3. 事件:一般继承自java.util.EventObject类，封装了事件源对象及跟事件相关的信息。
+4. 事件监听器:实现java.util.EventListener接口,注册在事件源上,当事件源的属性或状态改变时,取得相应的监听器调用其内部的回调方法。
+5. 事件源:事件发生的地方,生成了对应的时间对象。
+6. 事件监听器要注册在时间源上========>>>>事件源上要有监听器的容器.
+
+7. Proxy: 代理

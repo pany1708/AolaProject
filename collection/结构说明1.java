@@ -8,4 +8,4 @@
 
 2. 最顶层的接口: Collection与Map
 
-3.
+3. 注意理解集合的fail-fast机制.=========>>>>> ConcurrentModificationException

@@ -28,3 +28,9 @@
   System.out.println(s + p);
 
 6. 标记接口Serializable，用于表明HashMap对象可以被序列化
+
+7.  private static final long serialVersionUID = 8673264195747942595L;
+
+    serialVersionUID 序列化时为了保持版本的兼容性,即使版本升级之后之后反序列化仍然保持对象的唯一性;
+    1) 默认的1L;
+    2) 指纹算法生成的一个64位
