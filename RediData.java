@@ -22,3 +22,6 @@ MC_GlobalData 的userId是0
 
 RedisData.getRedisNode().get(REDIS_KEY);
 RedisData.getRedisNode().set(getRedisKey(u), StringUtil.join(alreadyCalledSet, COMMA));
+
+
+5. RedisData的使用 [Act170414GodPetClothDiscount] + [MostGloriousThreePmFit]
