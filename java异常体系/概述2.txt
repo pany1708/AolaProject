@@ -1,0 +1,3 @@
+推荐: [Java异常分类,异常处理及异常处理机制](http://www.blogfshare.com/java-exception.html)
+
+1. Error体系Error描述了java运行系统中的内部错误以及资源耗尽的情形.这种错误一般由虚拟机抛出.
