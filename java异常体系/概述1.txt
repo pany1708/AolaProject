@@ -1,1 +1,35 @@
-1. [理解](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
+    [理解](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
+
+1. java的异常机制的作用是: 提示程序的不正常情况.异常是一定意义上的错误.
+
+2. Throwable类是Java语言中所有错误或异常的超类(这就是一切皆可抛的东西).它有两个子类：Error和Exception.
+   这3个类都在 java.lang包中.
+
+3. Exception有分为2大类:
+   1) CheckedException: 需要用try...catch...显示的捕获. io包中的IOException及其子类
+   2) UncheckedException: 不需要捕获,又叫RuntimeException, 有：
+      IllegalArgumentException、IllegalStateException、NullPointerException、IndexOutOfBoundsException....
+
+4. try...catch...是一种"事务性"的保障，它的目的是保证程序在异常的情况下运行完毕，同时它还会告知程序员程序中出错的详细信息(这种详细信息有时要依赖于程序员设计).
+
+5. throw e; 原封不动的把这个异常抛给上一级.
+
+6.
+void f() throws ExceptionB{
+    throw new ExceptionB("exception b");
+}
+
+7. throws与throw的区别:
+   1) throw 异常对象; 是语句
+      throw关键字通常用在方法体中，并且抛出一个异常对象,后面代码不再执行
+
+   2) throws 异常类: 用在声明方法的末尾,用来在方法调用处处理,调用处需要try...catch....
+      当这个方法被调用时发生异常,则抛出这个异常. 【将异常抛给指定异常对象】
+
+8. 异常总是先被抛出，后被捕捉的。
+
+9. try{}是监控区,catch异常处理区,只会命中一个,finally是无论异常都会执行的区域.
+
+10. catch块与相应的异常类的类型相关.
+
+11. 必须声明方法可抛出的任何可查异常(checked exception). throws抛出的异常必须在调用处处理或者继续选项上一级抛出.
