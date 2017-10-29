@@ -10,4 +10,6 @@
 
 5. JMS(Java Messaging Service),JMS是Java的消息服务.
 
-6. 
+6. RMI是Enterprise JavaBeans的支柱，是建立分布式Java应用程序的方便途径。
+
+7. 远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可能简化远程接口对象的使用。
