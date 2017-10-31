@@ -1,3 +1,56 @@
 1. [必看](http://liujiacai.net/blog/2014/07/12/order-of-initialization-in-java/)
 
 2. [深入](https://www.ibm.com/developerworks/cn/java/j-lo-classloader/index.html)
+
+3. JVM动态去加载一个类的条件: 当一个类的静态变量第一次被引用时,触发JVM去装载它.
+   1) 静态方法
+   2) 静态属性
+   3) 构造方法[被视为类的静态成员特例],可以参考方法引用的写法, new
+
+   访问static final静态常量时,JVM的加载并不会进行初始化.
+
+4. JVM 将字节码转化为运行时对象分为三个阶段，分别是：loading 、Linking、initialization。
+
+loading是有ClassLoader来完成：加载
+    1)根据类的全名,生成一份二进制字符码来表示该类.
+    2)将二进制的字节码解析成方法区对应的数据结构.
+    3)最后生成一 Class 对象的实例来表示该类.
+
+    Bootstrap ——> Extension ——> System<第一个是C实现,后面的都是java实现的>
+    java实现的ClassLoader可以被获得: Class.getClassLoader();
+
+Linking: 链接
+    verification主要是保证类符合java语法; 【校验】
+    preparation:在这个阶段，JVM 会为类的成员变量分配内存空间并且赋予默认初始值，需要注意的是这个阶段不会执行任何代码，而只是根据变量类型决定初始值。如果不进行默认初始化，
+        分配的空间的值是随机的.  【准备】
+    Resolution: 阶段主要工作是确认类、接口、属性和方法在类run-time constant pool的位置，并且把这些符号引用（symbolic references）替换为直接引用 【解析】
+
+Initialization: 这个阶段会真正的去执行代码,进行初始化.
+    初始化发生在第一次主动调用时:
+        个类的实例被创建: new,反射,序列化,cloing,反序列化
+        调用static方法
+        sttaic变量的读写
+        子类被初始化
+        被设为JVM的启动类
+    这个阶段，执行代码的顺序遵循以下两个原则：
+        有static先初始化static，然后是非static的
+        显式初始化，构造块初始化，最后调用构造函数进行初始化
+    初始化的时候才会初始化静态变量和执行静态域代码.
+
+5. ClassLoader： 从下往上的去加载类,没有加载到,就委托到父类去加载.
+
+6. java.lang.ClassLoader抽象类来扩展自己的加载器.
+   自定义加载器的作用:
+    1)制定规则:加载指定目录下的类,加载加密的类;
+    2)缓存过以前加载的类
+    3)事先加载类以备用.
+    4)当.class文件修改后自动加载新的类文件．
+
+7. 当一个类具有继承关系,加载先从最顶层开始,直到加载到本类.
+
+8. java类文件编译之后,会在类中添加一个静态属性,是Class类的实例,用于描述类型信息.
+
+9. 类的加载:
+
+   隐式: new()
+   显示: Class.forName(); 或者 ClassLoader.loadClass();
