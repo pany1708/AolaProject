@@ -1,0 +1,9 @@
+1. 静态代理和动态代理.
+    静态代理实现要代理的类。
+    动态代理: java.lang.reflect.Proxy;
+
+2. Proxy: 根据代理内容为传入的接口生成代理用的.
+   java.lang.reflect.InvocationHandler;
+   使用例子参见: [project1] package com.chewuyun.proxy.proxy2; 这个是个典例.
+
+3.

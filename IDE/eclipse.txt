@@ -13,3 +13,5 @@
 全局 抽取局部变量 Alt+Shift+L
 
 重写父类的方法    alt + /
+
+5. 反编译插件jadclipse: http://blog.csdn.net/nowuseeme/article/details/54746826
