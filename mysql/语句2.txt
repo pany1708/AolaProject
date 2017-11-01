@@ -1,0 +1,17 @@
+1. insert ignore into UserClothesNew%d (UserId, ClothId, UsedUp) values(?,5410,0);
+
+2. insert/replace/insert ignore的区别
+   insert ignore into books(name) values("");
+   insert into bookes(name) values("") on duplicate key update id = 11;
+   insert into books (name) SELECT 'MySQL Manual' FROM dual WHERE NOT EXISTS (SELECT id FROM books WHERE id = 1);
+=========================================insert into books(name) values(select str from otherTables where...)==================================================
+   replace into books(name) values("");
+
+3. Mysql避免重复插入记录方法[ignore,Replace,ON DUPLICATE KEY UPDATE];
+   replace into: 在向表中插入数据的时候，经常遇到这样的情况： 1.首先判断数据是否存在; 2.如果不存在,则插入; 3.如果存在,则更新;
+   replace的3中用法:
+     1)replace into tbl_name(col_name, ...) values(...)
+     2)replace into tbl_name(col_name, ...) select ...
+     3)replace into tbl_name set col_name=value, ...
+
+4. SELECT bit_count(n);
