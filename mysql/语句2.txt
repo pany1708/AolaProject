@@ -15,3 +15,5 @@
      3)replace into tbl_name set col_name=value, ...
 
 4. SELECT bit_count(n);
+
+5. COMMENT='光龙翼龙 宿命对决活动专用表，用于点赞';
