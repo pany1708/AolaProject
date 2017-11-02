@@ -39,5 +39,5 @@ BattleContext context = pmm.battleContext;
 BossChallengeSeason.setUsePM(u, jba);  // 战斗阵容部署
 
 //
-int ce = CombatEffectiveness.getCombatEffectiveness(pm);
-int ce = PMUtil.getPMMaster(userId).getMaxAllCE()
+int ce = CombatEffectiveness.getCombatEffectiveness(pm); // 当前战力
+int ce = PMUtil.getPMMaster(userId).getMaxAllCE(); // 最高战力
