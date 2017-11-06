@@ -31,3 +31,13 @@ REPLACE INTO `MustWinLineUp` (`ActId`, `PetIndex`, `RaceId`, `petName`, `Service
 
 5. 修改签下来的2个VideoContentForAct.sql和VideoDetailForAct.java
 INSERT语句修改第一个Id为ActId, REPLACE
+
+----------------------------------------------------------------------------------------------------------------------------
+INSERT INTO `BossVideoDefine` (`BossId`, `Description`) VALUES ('67', '始祖巨龙挑战');
+这个BossId在代码中使用. Boss录像
+REPLACE INTO `MustWinLineUp` (`ActId`, `PetIndex`, `RaceId`, `petName`, `Service`, `MaxCE`, `ActName`) VALUES (47, 2, 3178, '传奇神龙', 0, 24000, '始祖巨龙挑战');
+这个ActId是官方录像
+
+
+jba.setRecord(true);
+jba.setDao(new BossChallengeVideoDao(u.getUserId(), 80));

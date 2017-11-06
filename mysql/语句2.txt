@@ -17,3 +17,19 @@
 4. SELECT bit_count(n);
 
 5. COMMENT='光龙翼龙 宿命对决活动专用表，用于点赞';
+
+6. select userid from ActData9Mod%d inner join UserClothesNew%d using (userid) where  dataid = 1165 and count >= 100 and clothid in (5410,5411) group by userid
+   HAVING COUNT(UserID) < 2;
+   分组筛选
+
+   表连接查询： on a.id = b.id  === using(id);
+
+7. 别名: as 推荐不要省略.
+   select 字段 as 别名;
+   select 字段  别名;
+   select 别名 = 字段;
+
+
+8. 连接查询和子查询的区别:
+
+9. 
