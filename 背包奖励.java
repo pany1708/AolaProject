@@ -46,3 +46,17 @@ res.putASObjectList("bn", BonusManager.addBonusWithoutValidation(u, bonus.toStri
 "8:433-1&521-1&437-1&525-1:4:1",
 
 BonusUtil.genRandomCard(Arrays.asList(4), null, 1)
+
+// 另一种购买的写法；
+BuyService.instance.buy(u, MaterialParam.createMaterialParam(serviceId, Material.TYPE_SERVICE, price)).getResult();
+
+
+根据 Service 来得到对应的价格:
+MaterialParam materialParam = MaterialParam.createMaterialParam(STConfig.BUY_MAP_SERVICE_ID, Material.TYPE_SERVICE, 1);
+int buyResult = BuyService.instance.buy(u, materialParam).getResult();
+if (buyResult == MaterialResult.SUCCESS){
+	int price = materialParam.getMaterial().getPrice();
+}
+
+
+放大奖励 + 合并奖励 ：  BonusUtil

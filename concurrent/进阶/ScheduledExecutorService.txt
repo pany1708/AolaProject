@@ -1,0 +1,10 @@
+1. ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+   ses.scheduleWithFixedDelay(new Runnable(){}, time, time, TimeUnit.seconds); // 定时执行.
+
+2. schedule(Runnable, Delay, TimeUnit); 被用来延迟指定时间后执行任务.
+
+3. ScheduleWithFixedDelay(Runnable, initialDelay, Delay, TimeUnit); 创建了一个在给定初始延迟后启动的定期操作,Delay决定了定时惹怒我之间的间隔【任务终止到下一次热虐的开始】.
+
+4. scheduleAtFixedRate(Runnable command, long initialDelay, long period, TimeUnitunit); 去上面的区别:定时执行.
+
+5. ScheduledExecutorService定时周期执行指定的任务

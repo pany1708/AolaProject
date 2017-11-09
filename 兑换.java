@@ -12,8 +12,6 @@ res.putASObjectList("bn", exchangeResult.getContent());  // 兑换后的奖励
   ExchangeResult
 
 
-
-
 2. 通用的兑换流程
 
 前端发送: SynthesizeExtension + 57_8;
@@ -21,3 +19,6 @@ res.putASObjectList("bn", exchangeResult.getContent());  // 兑换后的奖励
 相关的类: SynthesizeService
 
 Formula<module>: 包含了对应的数据库的结构.rpg.Formula表的FormulaId发给前端
+
+
+3. 文俊写的一个兑换的例子. 寻宝记活动里的: Act161021SeekTreasure [STManager#404]

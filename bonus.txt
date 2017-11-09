@@ -1,0 +1,6 @@
+1. 合并奖励：
+if (SWTaskEnum.寻宝记.isDouble()) {
+	bonusString = BonusUtil.mergeSameBonus(String.format("%s;%s", bonusDefine.bonus, bonusDefine.bonus));
+}
+
+2. BonusManager#1086 TODO 把奖励写入用户数据库. 值得关注大量的工具类
