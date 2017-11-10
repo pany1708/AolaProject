@@ -1,0 +1,1 @@
+1. 清除线上的redis数据的job: JobClearRedisData <配置这个job写的很清楚了>.

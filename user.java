@@ -40,5 +40,9 @@ lastLoginTime != loginTime(本次登录, User初始化的时候):
    lastLoginTime: 持久化在数据库
 nickName
 
-
 7. 用于在internalEvent的userlost事件，因为此时通过extensionHelper已经取不到user了
+
+8. 获得用户注册的天数:
+  UserDao.instance.getLifeDay(u.getUserId())
+
+9. 
