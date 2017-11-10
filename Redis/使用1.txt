@@ -1,0 +1,1 @@
+1. 使用Redis直接使用Redis官方的Jedis API即可，Jedis不仅能直接连接Redis，也能用Sentinel进行Redis的主从集群。
