@@ -8,7 +8,7 @@
    replace into books(name) values("");
 
 3. Mysql避免重复插入记录方法[ignore,Replace,ON DUPLICATE KEY UPDATE];
-   replace into: 在向表中插入数据的时候，经常遇到这样的情况： 1.首先判断数据是否存在; 2.如果不存在,则插入; 3.如果存在,则更新;
+   replace into: 在向表中插入数据的时候，经常遇到这样的情况： 1.首先判断数据是否存在; 2.如果不存在,则插入; 3.如果存在,则更新：实质是先删除旧行数据,在插入一行新值.
    replace的3中用法:
      1)replace into tbl_name(col_name, ...) values(...)
      2)replace into tbl_name(col_name, ...) select ...
@@ -18,7 +18,7 @@
 
 5. COMMENT='光龙翼龙 宿命对决活动专用表，用于点赞';
 
-6. select userid from ActData9Mod%d inner join UserClothesNew%d using (userid) where  dataid = 1165 and count >= 100 and clothid in (5410,5411) group by userid
+6. select userid from ActData9Mod%d inner join UserClothesNew%d using (userid) where  dataid = 1165 and count >= 100 and clothid in (5410,5411) group by userid.
    HAVING COUNT(UserID) < 2;
    分组筛选
 
@@ -32,4 +32,4 @@
 
 8. 连接查询和子查询的区别:
 
-9. 
+9.

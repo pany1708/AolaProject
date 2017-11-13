@@ -1,0 +1,16 @@
+1. MySQL中如何表示当前时间
+    CURRENT_TIMESTAMP
+    CURRENT_TIMESTAMP()
+    NOW()
+    LOCALTIME
+    LOCALTIME()
+    LOCALTIMESTAMP
+    LOCALTIMESTAMP()
+
+2. datetime/timestamp:
+   1)两者都可用来表示YYYY-MM-DD HH:MM:SS[.fraction]类型的日期.
+   2)TIMESTAMP和DATETIME除了存储范围和存储方式不一样，没有太大区别。当然，对于跨时区的业务，TIMESTAMP更为合适.
+   3)datetime锁存储的时间范围更大一些.
+
+3. mysql的内置类型:
+   

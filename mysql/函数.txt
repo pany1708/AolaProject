@@ -1,0 +1,4 @@
+1. bin(n): n是一个长整数bigint的数字,这个等价于conv(n,10,2).如果n是null,则会返回null.
+2. rand():
+3. concat(str1, str2): 连接字符串
+4.
