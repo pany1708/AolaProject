@@ -5,4 +5,4 @@ Title
 3. res.putASObjectList("bn", BonusManager.addBonusWithoutValidation(u, "111:" + ID_TITLE + ":1", 1));
 
 // 判断称号是否存在
-TitleManager.instance.isTitleExist(u.getUserId(), ID_TITLE);//
+TitleManager.instance.isTitleExist(u.getUserId(), ID_TITLE); // 是否有称号,并不依赖于db字段的表示.

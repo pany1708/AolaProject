@@ -36,3 +36,13 @@ public void onInternalEvent(SystemEvent ieo) {
     // 注意这里从userId获取user是很艰难的
   }
 }
+
+------------------------------------------------------------------------------------------------------------------
+@EventInject(GainPMEvent.class)
+public void listen(GainPMEvent event) {
+    User u = event.u;
+    if(event.raceId == ID_RACE){
+        onGainLegendarySGXL(u);
+    }
+}
+------------------------------------------------------------------------------------------------------------------
