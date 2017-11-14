@@ -1,0 +1,30 @@
+1. java8引入新的时间和日期API,被包含在java.time包中;  【https://lw900925.github.io/java/java8-newtime-api.html】
+   1)不变性和线程安全
+   2)所有的类都使用了工厂模式和策略模式,已其它类的协作很方便
+   3)关注点分离
+
+   新的API：java.time，由5个包组成：
+       java.time – 包含值对象的基础包
+       java.time.chrono – 提供对不同的日历系统的访问
+       java.time.format – 格式化和解析时间和日期
+       java.time.temporal – 包括底层框架和扩展特性
+       java.time.zone – 包含时区支持的类
+
+
+2. Java8的日期API中看到很多Joda-Time的特性.[Joda-Time框架]
+3. LocalDate和LocalTime和LocalTime:
+    LocalDate:简单的日期,关注年月日.
+    LocalTime:关注时分秒.
+    LocalDateTime:日期时间类: 是LocalDate和LocalTime的合体,可以互相转换
+4. 机器的日期和时间格式: Instant
+   对于计算机来说，建模时间最自然的格式是表示一个持续时间段上某个点的单一大整型数。这也是新的java.time.Instant类对时间建模的方式，基本上它是以Unix元年时间
+   (传统的设定为UTC时区1970年1月1日午夜时分)开始经历的秒数进行计算.
+   1) 时间线的瞬间点,用来记录时间戳.
+
+5. Duration: 表示一个时间段
+
+6. Period：以年月日来衡量一个时间段,
+
+7. 格式化日期: DateTimeFormatter
+    DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String formatdate = localDateTime.format(formatter);

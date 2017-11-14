@@ -1,0 +1,6 @@
+1. 转换关系:
+SQL -> Java
+--------------------------
+date -> LocalDate
+time -> LocalTime
+timestamp -> LocalDateTime
