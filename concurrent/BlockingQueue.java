@@ -7,9 +7,9 @@
    1：抛异常；2：返回特殊值，false或null；3：阻塞当前线程；4：超时阻塞 【推荐3和4】
      请求的操作不能得到立即执行的话，每个方法的表现也不同。这些方法如下：
        方法\处理方式	抛出异常	 返回特殊值[true/false]	 一直阻塞	      超时退出,返回一个Boolean值
-       插入方法	      add(e)	  offer(e)	               put(e)	      offer(e,time,unit)
-       移除方法      	remove()	poll()	                 take()	      poll(time,unit)
-       检查方法	     element()	peek()	                 不可用	      不可用
+       插入方法	      add(e)	  offer(e)	              put(e)	      offer(e,time,unit)
+       移除方法       remove()	  poll()	              take()	      poll(time,unit)
+       检查方法	      element()	  peek()	              不可用	        不可用
 
 3)  JDK7提供了7个阻塞队列, 分别是:
      ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。 【最常用】

@@ -1,5 +1,4 @@
 1. JDK7提供了7个阻塞队列。分别是
-
     ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。
     LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。
     PriorityBlockingQueue ：一个支持优先级排序的无界阻塞队列。

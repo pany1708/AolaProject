@@ -21,9 +21,9 @@
    (传统的设定为UTC时区1970年1月1日午夜时分)开始经历的秒数进行计算.
    1) 时间线的瞬间点,用来记录时间戳.
 
-5. Duration: 表示一个时间段
+5. Duration: 表示一个时间段 【2个Instant之间的距离】
 
-6. Period：以年月日来衡量一个时间段,
+6. Period：以年月日来衡量一个时间段【2个LocalDate之间的天数】
 
 7. 格式化日期: DateTimeFormatter
     DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

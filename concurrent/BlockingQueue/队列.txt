@@ -1,0 +1,5 @@
+1. 并发队列[ConcurrentLinkedQueue]和阻塞队列[LinkedBlockingQueue].
+2. 线程安全: 多线程访问同一代码,不会产生不确定的结果.
+3. LinkedBlockingQueue:生产者消费者的首选,主要使用put和take,阻塞放入和取出.LinkedBlockingQueue是一个线程安全的阻塞队列，它实现了BlockingQueue接口，BlockingQueue接口继承
+   自java.util.Queue接口，并在这个接口的基础上增加了take和put方法，这两个方法正是队列操作的阻塞版本。
+4. ConcurrentLinkedQueue是Queue的一个安全实现．Queue中元素按FIFO原则进行排序．采用CAS操作，来保证元素的一致性.
