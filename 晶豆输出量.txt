@@ -1,1 +1,4 @@
 ScoreOutPutLog.instance.logScoreOutPut("寻宝记_晶豆消耗总量", u.getUserId(), price / 100);
+
+// 可以助理多个bn
+ScoreOutPutLog.instance.logCrystalBeanOutPut("在线礼包送星币_晶豆输出总量", u.getUserId(), bn);

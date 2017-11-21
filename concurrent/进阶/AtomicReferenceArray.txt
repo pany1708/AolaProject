@@ -1,0 +1,10 @@
+1. 原子变量类相当于一种泛化的volatile变量，能够支持原子的和有条件的读-改-写操作.
+2.  java.util.concurrent.atomic中的类可以分成4组：
+    标量类（Scalar）：AtomicBoolean，AtomicInteger，AtomicLong，AtomicReference
+    数组类：AtomicIntegerArray，AtomicLongArray，AtomicReferenceArray
+    更新器类：AtomicLongFieldUpdater，AtomicIntegerFieldUpdater，AtomicReferenceFieldUpdater
+    复合变量类：AtomicMarkableReference，AtomicStampedReference
+
+3. atom提供的原子变量类,在多线程环境下，具有排他性, 不会阻塞线程(或者说是硬件上的阻塞).
+
+4. 其内部实现不是简单的使用synchronized，而是一个更为高效的方式CAS (compare and swap) + volatile和native方法，从而避免了synchronized的高开销，执行效率大为提升.
