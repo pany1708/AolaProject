@@ -1,0 +1,3 @@
+1. happens-before关系是程序语句之间的排序保证:
+2. 当写一个 volatile 变量时，随后对该变量读时会创建一个 happens-before 关系。所以，所有在 volatile 变量写操作之前完成的写操作，将会对随后该 volatile 变量读操作之后的所有
+   语句可见。
