@@ -1,0 +1,14 @@
+1. 接口的默认方法
+
+public interface IShape {
+	boolean isSatisfy(GCHAnalyzeResult result);//是否满足牌型条件
+
+	default boolean isSameArr(Integer[] arr1, Integer[] arr2){
+		for (int i = 0; i < arr1.length; i ++){
+			if (!arr1[i].equals(arr2[i])){
+				return false;
+			}
+		}
+		return true;
+	}
+}
