@@ -63,3 +63,11 @@
 9. 数组共享一个Class对象.
 
 10. 所有的类都有一个静态属性.class;
+
+11. clazz.isAssignableFrom(tmpClass)  ===>>> clazz是否是tmpClass的父类;
+    作用是判定clazz表示的类或接口是否同tmpClass指定的类表示的类或接口相同
+
+12. clazz.isPrimitive(): 判定指定的 Class 对象是否表示一个基本类型.
+    有九种预定义的 Class 对象，表示八个基本类型和 void。这些类对象由 Java 虚拟机创建，与其表示的基本类型同名，即 boolean、byte、char、short、int、long、float 和 double.
+
+13. 
