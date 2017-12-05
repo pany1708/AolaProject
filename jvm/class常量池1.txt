@@ -1,0 +1,22 @@
+1. 常量池(constant_pool)指的是在编译期被确定，并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口等中的常量，也包括字符串常量和符号引用。
+
+2. 符号引用则属于编译原理方面的概念，包括了如下三种类型的常量：类和接口的全限定名 +  字段名称和描述符 + 方法名称和描述符;
+
+3. Java中八种基本类型的包装类的大部分都实现了常量池技术，它们是Byte、Short、Integer、Long、Character、Boolean，另外两种浮点数类型的包装类(Float、Double)则没有实现.
+    另外Byte,Short,Integer,Long,Character这5种整型的包装类也只是在对应值在-128到127时才可使用对象池.
+
+4. 好处: 节省内存空间  + 节省运行时间.
+
+5. Integer i = 40; 实质是 i = Integer.valueOf(40); 从而可以使用常量池中对象.
+
+   Integer i = new Integer(40); 则不会使用常量池,会去堆中创建一个新对象.
+
+6. String:
+    String str1 = "abcd";  // 在常量池中拿对象
+    String str2 = new String("abcd");  // 直接在堆中创建对象
+
+   连接符号: +
+         文本之间的 + 产生的新对象才会加入到字符串常量池中, [只要包含了new方式产生的新对象(包含null)都不会再加入常量池].
+
+7. String s1 = new String("计算机");
+   String s2 = s1.intern();
