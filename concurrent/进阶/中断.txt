@@ -1,0 +1,27 @@
+1. interrupt() 、interrupted() 、isInterrupted()区别:
+
+java中有3中方式可以终止正在运行的线程:
+  1) run()执行完毕
+  2) stop()
+  3) 使用中断机制
+
+2.
+public static boolean interrupted() {
+    return currentThread().isInterrupted(true);
+}
+interrupted测试当前线程的中断状态,会清除中断状态.
+
+3.
+public boolean isInterrupted() {
+    return isInterrupted(false);
+}
+
+归纳总结:
+    interrupt：置线程的中断状态
+    isInterrupt：线程是否中断
+    interrupted：返回线程的上次的中断状态，并清除中断状态
+
+4.
+阻塞函数，如：Thread.sleep、Thread.join、Object.wait、LockSupport.park等在检查到线程的中断状态时，会抛出InterruptedException，同时会清除线程的中断状态.
+
+5.

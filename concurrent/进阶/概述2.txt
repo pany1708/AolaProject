@@ -1,0 +1,10 @@
+1. monitor[monitorenter/monitorexit];
+
+2. synchronized,wait/notify依赖于monitor对象,是java指令层面实现的悲观锁.
+
+3. Unsafe: 乐观锁,硬件级别的同步原语来实现。
+
+4. AbstractQueuedSync是所有Lock实现类的依赖.
+   同步器: acquire release
+
+5. juc包提供了CAS操作 + AQS

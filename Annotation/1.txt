@@ -1,0 +1,23 @@
+1.注解==标记,为程序打上了标记.
+
+2. java.lang.annation包:
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Target {
+}
+
+3. 注解只是一个标记，必需由另一方来执行某个动作，赋于它含义.
+
+4. 实现注解需要3个条件:
+   1) 注解声明
+   2) 使用注解的元素
+   3) 操作使用注解元素的代码
+
+自定义注解: 配合反射使用,通过反射拿到class,field,method上标注的注解,根据注解的有无,注解的类型, 注解参数的不同，来执行不同的操作.
+
+5. 注解也是一种类型.
+
+6. 预处理
+
+7. 

@@ -1,0 +1,27 @@
+1. jdk5引入的泛型,可以利用泛型来表示Class对象更具体的类型.
+
+2. Class<?> clazz = Integer.class;
+   通配符指明所有类型都适用,告诉编译器采用任意类型,Class<?>优先于直接使用Class.
+   也可以使用Class<? extends Number> clazz;
+
+3. 向Class引用添加泛型约束仅仅是为了提供编译期类型的检查从而避免将错误延续到运行时期.
+
+4. instanceof关键字与isInstance方法.
+//判断这个对象是不是这种类型
+obj.instanceof(class)
+
+//判断这个对象能不能被转化为这个类
+class.inInstance(obj)
+
+5. 反射核心:
+    在运行状态下,动态的获取信息以及调用对象的方法的功能 ===>>> 反射
+
+6. Class类与java.lang.reflect类库一起对反射技术进行了全力的支持. 反射是Spring/Mybatis的基础.
+   Constructor +  Filed  + Method +  Array[可以动态操作数组的类]
+
+   这些类都与Class相关联
+
+7.
+ArrayList<E>称为泛型类型，其中的E称为类型变量
+ArrayList<Integer>称为参数化的类型, 其中的Integer称为实际类型参数。
+ArrayList称为原始类型

@@ -36,4 +36,12 @@
       -
      get_...对应
 
-11. 
+11. eg:
+int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+//获取数组类型的Class 即int.class
+Class<?> clazz = array.getClass().getComponentType();
+//创建一个具有指定的组件类型和长度的新数组。
+//第一个参数:数组的类型,第二个参数:数组的长度
+Object newArr = Array.newInstance(clazz, 15);
+
+12. 
