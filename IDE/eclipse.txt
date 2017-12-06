@@ -15,3 +15,7 @@
 重写父类的方法    alt + /
 
 5. 反编译插件jadclipse: http://blog.csdn.net/nowuseeme/article/details/54746826
+
+6. 搜索类的子类: ctrl + t
+
+7. 搜索类的父类: F4 [这是个神器的快捷键,可以查看]

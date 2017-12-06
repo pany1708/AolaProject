@@ -1,0 +1,42 @@
+1. interrupt() 、interrupted() 、isInterrupted()区别:
+java中有3中方式可以终止正在运行的线程:
+  1) run()执行完毕
+  2) stop()
+  3) 使用中断机制
+
+2.
+public static boolean interrupted() {
+    return currentThread().isInterrupted(true);
+}
+interrupted测试当前线程的中断状态,会清除中断状态.
+
+3.
+public boolean isInterrupted() {
+    return isInterrupted(false);
+}
+
+归纳总结:
+    interrupt：置线程的中断状态
+    isInterrupt：线程是否中断
+    interrupted：返回线程的上次的中断状态，并清除中断状态
+
+4. 阻塞函数，如：Thread.sleep、Thread.join、Object.wait、LockSupport.park等在检查到线程的中断状态时，会抛出InterruptedException，同时会清除线程的中断状态.
+    BlockingQueue#put， BlockingQueuetake
+
+    中断状态=true,再次阻塞函数发生,则会抛出InterruptedException，并将中断状态重设为false.
+
+
+5. Java中断机制是一种协作机制,通过中断并不能直接终止另一个线程，而需要被中断的线程自己处理中断.
+
+6. 中断模型: 每个线程对象里都有一个boolean类型的标识<不是Thread类的字段,最终是通过native方法来完成的>,代表着是否有中断请求（该请求可以来自所有线程，包括被中断的线程本身）.
+eg：线程t1通过调用interrupt方法将线程t2的中断状态置为true，t2可以在合适的时候调用interrupted或isInterrupted来检测状态并做相应的处理。
+
+7. FutureTask.cancel() + ThreadPoolExecutor.shutdownNow()都会调用线程的interrupt来中断线程.
+
+8. 中断的处理:
+    中断机制只是设置被中断线程的中断状态,中断线程的动作:
+
+    1) 处理时机: 平衡性能和响应灵敏性
+    2) 处理方式: 中断状态的管理  +  中断响应
+
+9. catch(InterruptedException)里处理中断
