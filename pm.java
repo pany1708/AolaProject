@@ -54,3 +54,13 @@ private boolean validNeedAllTXWS(PM pm, int studyId1, int studyId2, int characte
 背包首宠
 ArrayList<PM> pmList = PMUtil.getAllPMInTheBag(userId);
 jba.customSinglePMForBattle(pmList.get(0));
+
+
+11. 根据raceid获得pm
+private PM getPM(int userId) {
+    List<PM> pmList = PMDao.getInstance().loadPMByRace(userId, PM_RACE_ID);
+    if (pmList.size() == 0) {
+        return null;
+    }
+    return pmList.get(0);
+}
