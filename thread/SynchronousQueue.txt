@@ -1,0 +1,11 @@
+1. SynchronousQueue 内部并没有数据缓存空间;
+2. 数据是在配对的生产者和消费者线程之间直接传递的，并不会将数据缓冲数据到队列中。可以这样来理解：生产者和消费者互相等待对方，握手，然后一起离开.
+
+3. 一个使用的场景是:
+   Executors.newCachedThreadPool()就使用了SynchronousQueue，这个线程池根据需要（新任务到来时）创建新的线程，如果有空闲线程则会重复使用，线程空闲了60秒后会被回收。
+
+4. SynchronousQueue由于其独有的线程一一配对通信机制
+
+ 必看:
+ [1](https://zhuanlan.zhihu.com/p/29227508)
+ [2](http://ifeve.com/java-synchronousqueue/)

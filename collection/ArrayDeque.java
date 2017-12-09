@@ -11,7 +11,6 @@ public void addFirst(E e) {
    这段代码相当于取余，同时解决了head为负值的情况。
 3. (head - 1) & (elements.length - 1) == (head - 1); 【重点理解】
 
-
 assert <boolean表达式> : <错误信息表达式>
 如果<boolean表达式>为true，则程序继续执行。
 如果为false，则程序抛出java.lang.AssertionError，并输入<错误信息表达式>。

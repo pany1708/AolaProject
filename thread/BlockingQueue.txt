@@ -1,0 +1,2 @@
+1. 线程的阻塞队列,作为线程容器;基础接口.  ===>>> 基础是Condition
+2. 最主要的实现是:ArrayBlockingQueue和LinkedBlockingQueue.

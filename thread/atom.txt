@@ -1,0 +1,28 @@
+[参考](http://chenzehe.iteye.com/blog/1759884)
+1. 这个包里提供了一组原子变量类,基础的特性是:在多线程的环境下,执行这些类的实例方法时，具有排他性.
+2. 即为当一个线程进入方法执行时,不会被其它线程打断,而别的线程就像自旋锁一样,一直等到该方法执行完毕,才由JVM从等待队列中选择一个另一个线程进入.
+3. 这是逻辑上的理解,不会阻塞线程<或者说是硬件级别上的阻塞>.
+4. 而是一个更为高效的方式CAS (compare and swap) + volatile和native方法
+   Unsafe提供的CAS函数实现
+5.
+    标量类（Scalar）：AtomicBoolean，AtomicInteger，AtomicLong，AtomicReference
+    数组类：AtomicIntegerArray，AtomicLongArray，AtomicReferenceArray
+    更新器类：AtomicLongFieldUpdater，AtomicIntegerFieldUpdater，AtomicReferenceFieldUpdater
+    复合变量类：AtomicMarkableReference，AtomicStampedReference
+
+6. AtomicReference: 是对"对象"进行原子操作.
+
+7. 第三组AtomicLongFieldUpdater，AtomicIntegerFieldUpdater，AtomicReferenceFieldUpdater基于反射的实用工具，可以对指定类的指定 volatile 字段进行原子更新.
+   API非常简单，但是也是有一些约束:
+ 1) 非static,非final的变量.
+ 2) 必须是valititle;
+ 3) 子类的变量<父类的只有访问权,没有修改权>
+ 4) 对于AtomicIntegerFieldUpdater 和AtomicLongFieldUpdater 只能修改int/long类型的字段，
+    不能修改其包装类型（Integer/Long）。如果要修改包装类型就需要使用AtomicReferenceFieldUpdater.
+
+8. AtomicLongFieldUpdater:
+   private static AtomicIntegerFieldUpdater<Test> update = AtomicIntegerFieldUpdater.newUpdater(Test.class, fieldName);
+
+9. AtomicMarkableReference，AtomicStampedReference
+   1) AtomicMarkableReference: 使用int值计数改变次数
+   2) AtomicStampedReference: 使用boolean值计数改变次数

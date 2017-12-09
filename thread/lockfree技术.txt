@@ -1,0 +1,4 @@
+lock-free:
+  volatile,final,CAS;
+
+ 2. 减少锁竞争对于性能
