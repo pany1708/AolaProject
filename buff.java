@@ -75,3 +75,6 @@ buff的几个核心的参考：
 例子: ShenPanGod[旭双写的] + AncestorWingDragonFight[我写的]
 
 ---------------------------------------------------------------------------------------------------------------------
+子buff
+
+"<buff id='240' buffReset='false'><buffs><buff id='220' x='10' y='true'/></buffs></buff>",
