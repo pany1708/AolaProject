@@ -10,6 +10,10 @@ COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
 
 2. 分库分表的执行工具: tools ——> partsql_executor
+e:
+cd E:\vstsworkspace\project2009\source\tools\partsql_executor
+
+run_sqlexe.bat -path part_script_config.xml -date 20171221
 
 3. STDao的例子更有意义:
 private static final String SELECT_USER_DATA = "SELECT UserId,MapInfo FROM Act161021SeekTreasure%s WHERE UserId=?;";
@@ -38,4 +42,4 @@ public static final ResultObjectBuilder<STUserData> resultBuilder = new ResultOb
 
 ResultObjectBuilder决定了tmo.executeQuery_ObjectList返回的list的数据类型.
 
-4. 
+4.
