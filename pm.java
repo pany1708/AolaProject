@@ -55,7 +55,6 @@ private boolean validNeedAllTXWS(PM pm, int studyId1, int studyId2, int characte
 ArrayList<PM> pmList = PMUtil.getAllPMInTheBag(userId);
 jba.customSinglePMForBattle(pmList.get(0));
 
-
 11. 根据raceid获得pm
 private PM getPM(int userId) {
     List<PM> pmList = PMDao.getInstance().loadPMByRace(userId, PM_RACE_ID);
@@ -64,3 +63,8 @@ private PM getPM(int userId) {
     }
     return pmList.get(0);
 }
+
+11. 治疗背包亚比:
+PMUtil.healAllPM(u);
+
+12. 

@@ -41,3 +41,11 @@ BossChallengeSeason.setUsePM(u, jba);  // 战斗阵容部署
 //
 int ce = CombatEffectiveness.getCombatEffectiveness(pm); // 当前战力
 int ce = PMUtil.getPMMaster(userId).getMaxAllCE(); // 最高战力
+
+
+// 敌方Boss依次上场,打死一个轮换
+BattleAttr.newPMMWithPMArray(new int[][] { { 11166, 100 }, { 11166, 100 }});
+
+// 敌方Boss, 我方一对多[地方一次上场多只Boss]
+BattleAttr.newPMMWithPMArray(new int[][] { { 11166, 100 }});
+BattleAttr.newPMMWithPMArray(new int[][] { { 11166, 100 }});
