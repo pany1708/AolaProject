@@ -47,3 +47,6 @@ nickName
 
 9. 开通指定天数的蓝宝石: NewPlayerLoginFiveDayGift
 AolaBank.instance().openActVipDays(u.getUserId(), ACTIVITY_ID, LANBAO_DAYS);
+
+10. 定位下用户在那个分库分表中.
+   int tableIndex = TableMapper.getUserName2IdTableIndex(dd);
