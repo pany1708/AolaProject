@@ -42,7 +42,8 @@ nickName
 
 7. 用于在internalEvent的userlost事件，因为此时通过extensionHelper已经取不到user了
 
-8. 获得用户注册的天数:
-  UserDao.instance.getLifeDay(u.getUserId())
+8. 获得用户注册的天数: <星龄>
+  UserDao.instance.getLifeDay(u.getUserId());
 
-9. 
+9. 开通指定天数的蓝宝石: NewPlayerLoginFiveDayGift
+AolaBank.instance().openActVipDays(u.getUserId(), ACTIVITY_ID, LANBAO_DAYS);

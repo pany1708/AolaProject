@@ -30,3 +30,8 @@ public class GCHCard implements Comparable<GCHCard> {  // 天赋纸牌屋
 
 3. Comparator是比较接口: 外部比较器
    Comparable是排序接口: 内部比较器
+
+4. Comparable: 实现了这个接口的类:
+  compareTo(Object o);
+
+  这个方法需要验证null,抛出 NullPointerException;

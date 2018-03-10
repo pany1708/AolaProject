@@ -1,0 +1,5 @@
+1. Redis的底层数据结构有以下几种：
+    简单动态字符串sds(Simple Dynamic String)
+    双端链表(LinkedList)
+    字典(Map)
+    跳跃表(SkipList)

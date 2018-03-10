@@ -1,0 +1,5 @@
+1.
+
+MemcachedFacade.getInstance().setDailyObject(intUserName, "wearingclothes", wearingClothesInfo);
+
+String clothes = (String)MemcachedFacade.getInstance().getDailyObject(intUserName, "wearingclothes");

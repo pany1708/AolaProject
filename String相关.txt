@@ -39,6 +39,20 @@ valueOf(): 返回的是Object.
 \' 单引号
 \" 双引号
 
-４.
+4. 转义字符:
 
  . | + *
+
+5. String + StingBuilder  + StringBuffer :
+
+1) String 是字符串常量
+2) 后2个是字符串变量, 使用了字符串缓冲区的设计.
+
+String str = "a" + "b" + "c";这种写法String的速度快于StingBuilder;
+
+String str1="abc";
+String str2="de";
+String str=str1+str2;
+这种涉及到对象的生成和回收,String的速度会慢很多.
+
+6.

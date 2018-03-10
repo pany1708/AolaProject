@@ -9,3 +9,9 @@
 // 文俊的【做16.7.29周年蛋糕六的飞起】Act160729SixToFly
 int buyResult = ProduceService.instance.produce(u, new MaterialFormula(100, getMakeCost(curProg),
                 null), false).getResult();
+
+
+3. 直接奥币购买: BuyUtil#buyFromAobi
+
+4. 直接发放星币奖励
+AolaBank.instance().addXingbi(u.getUserId(), 28, activityName);
