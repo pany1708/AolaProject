@@ -1,0 +1,5 @@
+jdk自带的工具是在jsk下的bin目录
+
+1. JDK中自带的查看堆栈工具jstack[分析线程状态];
+
+2. jconsole

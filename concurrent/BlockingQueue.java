@@ -11,6 +11,8 @@
        移除方法       remove()	  poll()	              take()	      poll(time,unit)
        检查方法	      element()	  peek()	              不可用	        不可用
 
+       返回特殊值：插入方法会返回是否成功，成功则返回true; 移除方法，则是从队列里拿出一个元素，如果没有则返回null;
+
 3)  JDK7提供了7个阻塞队列, 分别是:
      ArrayBlockingQueue ：一个由数组结构组成的有界阻塞队列。 【最常用】
      LinkedBlockingQueue ：一个由链表结构组成的有界阻塞队列。 【不会满】
