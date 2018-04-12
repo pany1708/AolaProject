@@ -15,7 +15,10 @@ Logger.debug(String.format("概率数组:(%s), 概率总和:%s, 随机数:%s, �
     1) Logger logger = LoggerFactory.getLogger(Program.class);
     logger.info("hello world");
 
-6. Logger可以被分配级别。级别包括：TRACE、DEBUG、INFO、WARN和ERROR。
-   打印高于配置设置的level级别的日志.
+6. Logger可以被分配级别。级别包括:
+     优先级从高到低依次为：off, fatal, error, warn, info, debug, trace, all;
+     常用的: error, warn, info, debug
+
+     打印高于配置设置的level级别的日志.
 
 7.
