@@ -31,7 +31,17 @@
 
 7. 实际上final的语义和volatile是有冲突的，这两个关键字不能同时存在。
 
-
 8. 对于volatile变量_instance，所有的写（write）都将先行发生于读（read）
 
 9. 先行发生的保障（happens-before guarantee）
+
+10. 可以保证多线程下的可见性:
+    1) 读volatile: 每当子线程某一语句要用到volatile变量时，都会从主线程重新拷贝一份，这样就保证子线程的会跟主线程的一致。
+    2) 写volatile: 每当子线程某一语句要写volatile变量时，都会在写完后同步到主线程去，这样就保证主线程的变量及时更新。
+
+11. 它不会引起线程上下文的切换和调度,是轻量级的synchronized[锁].
+
+12. 理解volatile是怎么保证线程可见性的.
+    保证了线程对共享变量的操作都是一致的
+
+13. [http://cmsblogs.com/?p=2092]
