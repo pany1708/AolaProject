@@ -37,3 +37,75 @@
    数据库事务管理
 
 8. [重要的参考学习系列](http://www.importnew.com/17911.html)
+
+9. SpringIoC容器的依赖有两层含义：Bean依赖容器和容器注入Bean的依赖资源.
+
+   构造器注入：就是容器实例化Bean时注入那些依赖，通过在在Bean定义中指定构造器参数进行注入依赖，包括实例工厂方法参数注入依赖，但静态工厂方法参数不允许注入依赖；
+   setter注入：通过setter方法进行注入依赖；
+   方法注入：能通过配置方式替换掉Bean方法，也就是通过配置改变Bean方法功能.
+
+10. 构造器注入:
+                <constructor-arg index="0" value="123"></constructor-arg>
+                <constructor-arg name=”message” value=”Hello World!”/>
+                <constructor-arg type=”java.lang.String” value=”Hello World!”/> type==参数类型的全类名
+
+    setter注入:
+                <property name="name" value="LiuChunfu" />
+                <property name="helloWorld" ref="springHelloWorld" /> ref引用当前配置文件里的bean.
+
+11. 构造器 + setter注入 = 最基本的注入方法.
+    Spring框架还提供了高级的基于注解的依赖注入.
+
+12. 默认情况下，ApplicationContext会在初始化的时候创建和配置所有Bean. 这样便于立即发现错误.
+
+   延迟加载, 只需要在bean配置加上: lazy-init="true".
+
+   如果要让所有Bean都延迟加载，可以在配置文件的根节点beans上添加:
+   <beans default-lazy-init="true">
+       <!-- no beans will be pre-instantiated... -->
+  </beans>
+
+13. Bean作用域: 单例 + 原型
+    默认情况下Bean的作用域是单例，这就是说在整个应用程序中每次获得的Bean，完全就是同一个对象. [默认实现单例].
+
+    常用的作用域: 原型---->>> 用来定义有状态的Bean
+                 SpringIoC容器只负责创建和分配原型Bean, 销毁工作需要由请求方进行.
+
+14. 注解实现的Bean定义:
+
+@Configuration
+public class SpringConfig {
+    @Autowired
+    private Teacher englishTeacher;
+
+    @Autowired
+    private List<Student> someStudents;
+
+    @Bean(name = {"englishClassroom"})
+    @Description("英语教室")
+    public Classroom englishClassroom() {
+        return new Classroom(englishTeacher, someStudents);
+    }
+    @Bean
+    public List<Student> someStudents() {
+        return StudentFactory.getStudents();
+    }
+    @Bean
+    public Teacher englishTeacher() {
+        return new Teacher("英语老师", 32);
+    }
+}
+
+@Configuration:  配置类
+@Bean: 通过普通的Java代码来初始化一个对象，然后返回这个对象.
+@Description: 为Bean添加一段描述信息. [这个和@Bean一起出现]
+
+15. 获取ApplicationContext:
+
+  ApplicationContext context = new ClassPathXmlApplicationContext("springxml/beans.xml");
+
+  ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class); // 配置类
+
+16. 关于注解实现Bean配置: https://www.jianshu.com/p/bf0c9f23381a
+
+17. 3中依赖注入的实现方式:  http://listenzhangbin.com/post/2016/03/java-spring-ioc-di/

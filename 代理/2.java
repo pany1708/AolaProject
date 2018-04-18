@@ -37,6 +37,10 @@ public interface InvocationHandler{
 invoke()方法中的 Method 对象参数代表了被动态代理的接口中要调用的方法，从这个 method 对象中你可以获取到这个方法名字，方法的参数，参数类型等等信息。
 Object 数组参数包含了被动态代理的方法需要的方法参数。注意：原生数据类型（如int，long等等）方法参数传入等价的包装对象（如Integer， Long等等）。
 
+在这个方法里实现对委托对象的代理访问.
+
+
+
    Java 动态代理:
       http://wiki.jikexueyuan.com/project/java-reflection/java-dynamic.html
 

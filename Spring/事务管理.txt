@@ -1,0 +1,17 @@
+1. Spring中的事务管理通常有两种方式: 编程式 + 声明式;
+
+2. 事务的4个属性: 原子性 +  一致性  + 隔离性  + 持久性;
+
+3. MySQL的表存储引擎为Innodb才支持事务:
+
+   Connection.setAutoCommit(false); // 更改JDBC事务的默认提交方式 [默认是自动提交]
+   ....执行Sql操作.....
+   Connection.commit();  //提交JDBC事务
+   Connection.setAutoCommit(true);// 恢复JDBC事务的默认提交方式
+
+   出现异常:
+      Connection.rollbak();
+
+   默认的是: 执行一条语句就提交, 如果异常会回滚的. [一条语句谈不上事务]
+
+4. 
