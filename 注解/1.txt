@@ -1,0 +1,39 @@
+1. 注解使得代码简洁易懂,减轻了配置文件带来的繁琐.
+
+2. 元数据,有注解处理器进行处理.
+
+3. 保证了代码和配置在同一个地方,其它所需要的信息通过自动的方式来完成.
+
+4. 注解: 提供用来完整描述程序所需要的信息,编译器类型检查.
+
+5. 注解处理器: 读取分析注解的工具.jdk的反射机制.
+
+---------------------------------------------------  注解处理器  ----------------------------------------------------------------------------------
+
+6.注解处理器(Annotation Processor)是javac内置的一个用于编译时扫描和处理注解(Annotation)的工具。
+      在源代码编译阶段，通过注解处理器，我们可以获取源文件内注解(Annotation)相关内容.
+
+7. 注解处理器: 在编译期间工作, 在编译期间获取相关的注解数据,动态生成.java文件 ===>>> 用来自动生成一些有规律性的代码,解决手工编写重复代码的问题.
+
+8. 创建一个自定义Annotation Processor继承于AbstractProcessor.
+
+@AutoService(Processor.class)
+public class MyProcessor extends AbstractProcessor {
+
+    @Override
+    public synchronized void init(ProcessingEnvironment env){
+    }
+
+    @Override
+    public boolean process(Set<? extends TypeElement> annoations, RoundEnvironment roundEnv) { }
+
+    @Override
+    public Set<String> getSupportedAnnotationTypes() {
+    }
+
+    @Override
+    public SourceVersion getSupportedSourceVersion() {
+    }
+}
+
+9. 
