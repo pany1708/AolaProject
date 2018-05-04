@@ -17,3 +17,11 @@
     ConcurrentSkipListSet
     CopyOnWriteArrayList
     CopyOnWriteArraySet
+
+===================================================================================================================================================
+
+1. juc提供的线程安全, 并发容器和框架
+
+  1) ConcurrentHashMap
+  2) ConcurrentLinkedQueue
+  3) 

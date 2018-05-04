@@ -1,0 +1,26 @@
+1. Spring是模块化的.
+
+2. SpringIoC容器利用Java的POJO类和配置元数据来生成完全配置和可执行的系统或应用程序.
+
+3. 提供了2种不同类型的容器:
+
+   1) BeanFactory容器: 最简单的容器,给DI提供了最基本的支持.
+
+   2) ApplicationContext容器: 包含了BeanFactory容器的所有功能, 还有其它附加功能: 例如从一个属性文件中解析文本信息的能力.
+
+4. ApplicationContext容器: 该容器从 XML 文件中加载已被定义的 bean
+
+  1) FileSystemXmlApplicationContext: 需要提供给构造器XML文件的完整路径.
+
+  2) ClassPathXmlApplicationContext:  相对与src目录的位置.
+
+5. Bean:
+
+   bean是一个被实例化,组装,并通过IoC容器锁管理的对象。
+
+   bean是由容器提供的配置元数据创建的.
+
+   元数据:
+          1) 如何创建一个bean.
+          2) bean的生命周期的详细信息.
+          3) bean的依赖关系.
