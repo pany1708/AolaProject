@@ -24,4 +24,9 @@ public boolean isInterrupted() {
 4.
 阻塞函数，如：Thread.sleep、Thread.join、Object.wait、LockSupport.park等在检查到线程的中断状态时，会抛出InterruptedException，同时会清除线程的中断状态.
 
-5.
+5. 中断的理解:
+
+  http://ifeve.com/java-interrupt-mechanism/
+
+
+6. 异常: InterruptedException

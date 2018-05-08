@@ -1,0 +1,5 @@
+1. 原子性, 可见性, 有序性:
+
+2. 可见性: volatile, final, synchronized.
+
+3. 有序性: 先行规则.
