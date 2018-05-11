@@ -1,0 +1,11 @@
+1. 在线网址:
+
+1) 学习系列:
+https://www.kancloud.cn/digest/itfootball-gradle/105793
+
+2) 博文:
+http://mrljdx.com/2016/03/17/Gradle%E5%AE%9E%E6%88%98%E5%8F%8A%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/
+https://www.cnblogs.com/wxishang1991/p/5532006.html
+https://blog.csdn.net/huyuchaoheaven/article/details/51725290
+
+3) 慕课网的学习视频

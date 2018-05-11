@@ -1,0 +1,32 @@
+1. rmi客户端和服务器端的协议: JRMP（ Java Remote Method Protocol）;
+
+2. 理解rmi:
+1)
+https://blog.csdn.net/lmy86263/article/details/72594760
+
+2)
+http://xintq.net/2014/07/22/rmi/
+
+3)
+
+
+
+
+3. 表示符:
+  该名称是URL形式的，类似于http的URL，schema是rmi；
+  格式类似于rmi://host:port/name，host指明注册表运行的注解，port表明接收调用的端口，name是一个标识该对象的简单名称。
+  主机和端口都是可选的，如果省略主机，则默认运行在本地；如果端口也省略，则默认端口是1099;
+
+  服务器地址（serverAddress）+ 远程对象名字（objectName）
+
+4. 实现RMI所需的API几乎都在：
+
+java.rmi：提供客户端需要的类、接口和异常；
+java.rmi.server：提供服务端需要的类、接口和异常；
+java.rmi.registry：提供注册表的创建以及查找和命名远程对象的类、接口和异常；
+
+5. RMI中客户端和服务器的界限不明显: 客户端可以为服务端提供远程调用的方法
+
+6. 实现了java.rmi.Remote接口的类或者继承了java.rmi.Remote接口的所有接口都是远程对象。
+
+7.
