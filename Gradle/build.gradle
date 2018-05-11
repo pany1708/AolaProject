@@ -1,0 +1,77 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+ 
+tasks.withType(JavaCompile) { 
+    options.encoding = 'UTF-8' 
+} 
+ 
+repositories{
+    maven{ url "http://repo.bt/repository/maven-public/" }
+	maven{ url "http://repo.bt/repository/maven-releases/" }
+    maven{ url "http://repo.bt/repository/maven-snapshots/" }
+	maven{ url "http://repo.bt/repository/oss-repo/" }
+	maven{ url "http://repo.bt/repository/aola-repo/" }
+	mavenCentral()
+}
+
+configurations.all {
+    //每隔0秒
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    // 采用动态版本声明的依赖缓存0秒
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+configurations {
+			compile.exclude module: 'xml-apis' //取消依赖xml-apis，这样xml-apis.jar的jar就不会被打包一起
+			compile.exclude module: 'xerces' 
+			compile.exclude module: 'servlet-api' 
+			
+		}
+dependencies {
+    compile( 
+        // 公司的包
+		["c3p0:c3p0:0.9.1.2"],//
+		["com.baitian.als:alsrmi:1.0"],//
+		["com.baitian.als:app-common:2.1"],//
+		["com.baitian:altraserver:1.1"],//
+		["com.baitian:baitian-common:+"],//
+		["com.danga:java_memcached-release:2.0.1"],//
+		["com.google.protobuf:protobuf-java:3.0.0-beta-1"],//
+		["log4j:log4j:1.2.15"],//
+		["mysql:mysql-connector-java:5.1.20"],//
+		// 奥拉星的包
+		["com.baitian.aola:aola-common:+"],//
+	)
+}
+ 
+sourceSets {
+    main {
+        java {
+            srcDirs = ["./src"];
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId "com.baitian.aola"
+            artifactId "aola-alappif"
+            version "${version}"
+            //若是war包，就写components.web,若是jar包，就写components.java 
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "http://repo.bt/repository/aola-repo/"
+            credentials {
+                try{
+                    username "${un}"
+                    password "${pwd}"
+                }catch(Exception e){
+                     
+                }
+            }
+        }
+    }
+}
