@@ -1,0 +1,6 @@
+1. [美团文章]
+https://tech.meituan.com/nio.html
+
+2. BIO -> NIO -> AIO
+
+3. Netty是一个NIO的框架

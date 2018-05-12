@@ -1,0 +1,5 @@
+1. 资料:
+
+https://waylau.gitbooks.io/essential-netty-in-action/
+
+https://waylau.com/netty-4-user-guide/
