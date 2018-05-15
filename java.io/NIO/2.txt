@@ -1,0 +1,21 @@
+1. 通道 和 缓冲区 是 NIO 中的核心对象，几乎在每一个 I/O 操作中都要使用它们.
+
+   通道: 对原I/O包中流的模拟, channel对象.  通道与流的不同之处在于通道是双向的.
+
+   缓冲区: buffer, 一个容器对象.
+
+2. 所有数据都是用缓冲区处理的.
+
+3. 在读取数据时，它是直接读到缓冲区中的。在写入数据时，它是写入到缓冲区中的.
+
+4. 基础类型都有对应的Buffer类:
+  ByteBuffer
+  CharBuffer
+  ShortBuffer
+  IntBuffer
+  LongBuffer
+  FloatBuffer
+  DoubleBuffer
+
+5.
+https://www.ibm.com/developerworks/cn/education/java/j-nio/j-nio.html

@@ -1,3 +1,69 @@
 1. NIO(Non-blocking I/O), 一中同步非阻塞模型, 也是IO多路复用的基础.[解决高并发与大量连接]
 
-2. 
+2. NIO由原先的阻塞读写(占用线程),变成了单线程轮询事件,找到可以读写的网络描述符进行读写.
+   除了事件的轮询是阻塞的[没有可干的事必须要阻塞],剩余的IO是单纯的CPU操作没有必要多线程.
+
+3. 如果一个连接不能读写（socket.read()返回0或者socket.write()返回0），我们可以把这件事记下来，
+   记录的方式通常是在Selector上注册标记位，然后切换到其它就绪的连接（channel）继续进行读写。
+
+4. 结合事件模型使用NIO[同步非阻塞]:
+  NIO的事件主要有: 读就绪, 写就绪, 有新连接到来.
+  注册这几个时间对应的时间处理器,
+
+5. 用一个死循环选择就绪的事件，会执行系统调用（Linux 2.6之前是select、poll，2.6之后是epoll，Windows是IOCP），
+   还会阻塞的等待新事件的到来。新事件到来的时候，会在selector上注册标记位，标示可读、可写或者有连接到来。
+
+6. 最简单的Reactor模式:
+
+   interface ChannelHandler{
+      void channelReadable(Channel channel);
+      void channelWritable(Channel channel);
+   }
+   class Channel{
+     Socket socket;
+     Event event;//读，写或者连接
+   }
+
+   //IO线程主循环:
+   class IoThread extends Thread{
+   public void run(){
+   Channel channel;
+   while(channel=Selector.select()){//选择就绪的事件和对应的连接
+      if(channel.event==accept){
+         registerNewChannelHandler(channel);//如果是新连接，则注册一个新的读写处理器
+      }
+      if(channel.event==write){
+         getChannelHandler(channel).channelWritable(channel);//如果可以写，则执行写事件
+      }
+      if(channel.event==read){
+          getChannelHandler(channel).channelReadable(channel);//如果可以读，则执行读事件
+      }
+    }
+   }
+   Map<Channel，ChannelHandler> handlerMap;//所有channel的对应事件处理器
+  }
+
+  注册所有感兴趣的事件处理器，单线程轮询选择就绪事件，执行事件处理器。
+
+7. 仔细分析一下我们需要的线程，其实主要包括以下几种：
+
+事件分发器，单线程选择就绪的事件。
+I/O处理器，包括connect、read、write等，这种纯CPU操作，一般开启CPU核心个线程就可以。
+业务线程，在处理完I/O后，业务一般还会有自己的业务逻辑，有的还会有其他的阻塞I/O，如DB操作，RPC等。只要有阻塞，就需要单独的线程。
+
+8. 一个socket只能属于一个IoThread，而一个IoThread可以管理多个socket。
+
+9. 另外连接的处理和读写的处理通常可以选择分开，这样对于海量连接的注册和读写就可以分发。虽然read()和write()是比较高效无阻塞的函数.
+
+10. I/O 复用机制需要事件分发器（event dispatcher）。 事件分发器的作用，即将那些读写事件源分发给各读写事件的处理者，
+
+11. NIO的优势:
+  事件驱动模型
+  避免多线程
+  单线程处理多任务
+  非阻塞I/O，I/O读写不再阻塞，而是返回0
+  基于block的传输，通常比基于流的传输更高效
+  更高级的IO函数，zero-copy
+  IO多路复用大大提高了Java网络应用的可伸缩性和实用性
+
+12.
