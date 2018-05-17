@@ -1,2 +1,5 @@
 1. NIO系列:
 http://ifeve.com/java-nio-all/
+
+[重要]
+http://www.iteye.com/magazines/132-Java-NIO
