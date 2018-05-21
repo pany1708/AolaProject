@@ -3,4 +3,20 @@ https://tech.meituan.com/nio.html
 
 2. BIO -> NIO -> AIO
 
-3. Netty是一个NIO的框架
+3.
+BIO accept,read,write 都是阻塞的。
+NIO select 阻塞，read，write是非阻塞的。
+
+4. NIO 的工具包提出了基于 Selector（选择器）、Buffer（缓冲区）、Channel（通道）的新模式；Selector、Channel和 SelectionKey（选择键）配合起来使用，
+可以实现并发的非阻塞型 I/O 能力。
+
+5. NIO由原来的BIO的阻塞读写（占用线程）变成了单线程轮询事件，找到可以进行读写的网络描述符进行读写。除了事件的轮询是阻塞的（没有可干的事情必须要阻塞），
+  剩余的I/O操作都是纯CPU操作，没有必要开启多线程。
+
+6. NIO限制:
+  Java的Selector对于Linux系统来说，有一个致命限制：同一个channel的select不能被并发的调用。因此，如果有多个I/O线程，必须保证：
+  一个socket只能属于一个IoThread，而一个IoThread可以管理多个socket.
+
+7. NIO基础:
+
+1) 提供SocketChannel和ServerSocketChannel 2种不同的套接字通道实现.

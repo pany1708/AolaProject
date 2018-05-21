@@ -1,0 +1,7 @@
+1. 搭建自己的maven仓库:
+
+2.  Nexus Repository Manager
+
+  Maven私服（Repository Manager） - Nexus安装和使用
+
+3. 

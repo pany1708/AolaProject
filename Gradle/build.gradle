@@ -1,77 +1,96 @@
 apply plugin: 'java'
-apply plugin: 'maven-publish'
- 
-tasks.withType(JavaCompile) { 
-    options.encoding = 'UTF-8' 
-} 
- 
-repositories{
-    maven{ url "http://repo.bt/repository/maven-public/" }
-	maven{ url "http://repo.bt/repository/maven-releases/" }
-    maven{ url "http://repo.bt/repository/maven-snapshots/" }
-	maven{ url "http://repo.bt/repository/oss-repo/" }
-	maven{ url "http://repo.bt/repository/aola-repo/" }
-	mavenCentral()
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
-configurations.all {
+repositories{
+    maven{ url "http://repo.bt/repository/maven-public/" }
+    maven{ url "http://repo.bt/repository/maven-releases/" }
+    maven{ url "http://repo.bt/repository/maven-snapshots/" }
+	  maven{ url "http://repo.bt/repository/oss-repo/" }
+   	maven{ url "http://repo.bt/repository/aola-repo/" }
+    mavenCentral()
+}
+
+configurations.all{
     //每隔0秒
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
     // 采用动态版本声明的依赖缓存0秒
     resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    transitive = false
 }
-configurations {
-			compile.exclude module: 'xml-apis' //取消依赖xml-apis，这样xml-apis.jar的jar就不会被打包一起
-			compile.exclude module: 'xerces' 
-			compile.exclude module: 'servlet-api' 
-			
-		}
+
+configurations{
+	compile.exclude module: 'xml-apis' //取消依赖xml-apis，这样xml-apis.jar的jar就不会被打包一起
+	compile.exclude module: 'xerces'
+	compile.exclude module: 'servlet-api'
+}
+
 dependencies {
-    compile( 
-        // 公司的包
-		["c3p0:c3p0:0.9.1.2"],//
-		["com.baitian.als:alsrmi:1.0"],//
-		["com.baitian.als:app-common:2.1"],//
-		["com.baitian:altraserver:1.1"],//
-		["com.baitian:baitian-common:+"],//
-		["com.danga:java_memcached-release:2.0.1"],//
-		["com.google.protobuf:protobuf-java:3.0.0-beta-1"],//
-		["log4j:log4j:1.2.15"],//
-		["mysql:mysql-connector-java:5.1.20"],//
-		// 奥拉星的包
-		["com.baitian.aola:aola-common:+"],//
-	)
+    compile(
+           // 公司的包
+           		["junit:junit:4.8.2"],
+	            ["c3p0:c3p0:0.9.1.2"],
+              ["com.baitian:alsadmin:1.0"],
+	            ["com.baitian.als:alsrmi:1.0"],
+	            ["com.baitian.als:app-common:2.1"],
+              ["com.baitian.bank.if:aobi-money-interface:1.0"],
+	            ["com.baitian.bank:bankif:1.0.2"],
+	            ["com.baitian.bank:paycenterif:1.0.1"],
+	            ["com.baitian.bankif:aolabankif:1.0.2"],
+        	    ["com.baitian:card:1.0.0"],
+	            ["com.baitian.uc:uc-login-client:2.1"],
+	            ["com.baitian.uc:uc-login-data:2.1"],
+	            ["com.baitian.yunwei.realtime:rt-data-httpif:2.0.6"],
+	            ["com.baitian:altraserver:1.1"],
+	            ["com.baitian:baitian-common:+"],
+	            ["com.baitian:gameonlinechat:1.0.0"],
+	            ["com.baitian:heartbeat:1.0.1"],
+	            ["com.zaxxer:HikariCP:2.6.3"],
+	            ["com.baitian:java_tokyotyrant-release:2.0.1"],
+	            ["com.baitian:logcollector-client:1.0.0"],
+	            ["com.baitian:questionnaire:1.0.0"],
+	            ["com.bt.tech:wordfilter:1.1.0"],
+	            ["com.caucho:hessian:4.0.7"],
+	            ["com.danga:java_memcached-release:2.0.1"],
+	            ["com.google.protobuf:protobuf-java:3.0.0-beta-1"],
+	            ["commons-beanutils:commons-beanutils:1.7.0"],
+	            ["commons-collections:commons-collections:3.2"],
+	            ["commons-lang:commons-lang:2.3"],
+	            ["commons-logging:commons-logging:1.1"],
+	            ["commons-pool:commons-pool:1.2"],
+	            ["dom4j:dom4j:1.6.1"],
+	            ["log4j:log4j:1.2.15"],
+	            ["mysql:mysql-connector-java:5.1.20"],
+	            ["net.sf.ezmorph:ezmorph:1.0.3"],
+	            ["net.sf.json:json-lib:2.1"],
+	            ["net.sourceforge.jexcelapi:jxl:2.6.12"],
+	            ["org.apache.commons:commons-lang3:3.4"],
+	            ["org.apache.commons:commons-pool2:2.4.2"],
+	            ["org.apache.httpcomponents:httpcore:4.4.9"],
+	            ["org.apache.httpcomponents:httpclient:4.5.5"],
+	            ["org.apache.thrift:libthrift:0.7.0"],
+	            ["org.json:json:20160810"],
+	            ["org.slf4j:slf4j-api:1.6.4"],
+	            ["org.slf4j:slf4j-log4j12:1.6.4"],
+	            ["redis.clients:jedis:2.9.0"],
+	            ["com.baitian.aola:online-stat:1.0"],
+	            ["com.baitian.aola:pwdcard-common:1.0"],
+
+		        // 奥拉星的包
+	          //["com.baitian.aola:aola-alappif:+"],
+	          //["com.baitian.aola:aola-common:+"],
+	          //["com.baitian.aola:aola-pmbsrmi:+"],
+
+	            ["com.baitian.aola:bgmv2:1.0"]
+    )
 }
- 
+
 sourceSets {
     main {
         java {
-            srcDirs = ["./src"];
-        }
-    }
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId "com.baitian.aola"
-            artifactId "aola-alappif"
-            version "${version}"
-            //若是war包，就写components.web,若是jar包，就写components.java 
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            url = "http://repo.bt/repository/aola-repo/"
-            credentials {
-                try{
-                    username "${un}"
-                    password "${pwd}"
-                }catch(Exception e){
-                     
-                }
-            }
+            srcDirs = ["./src","./test","./tools"];
         }
     }
 }
