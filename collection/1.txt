@@ -1,0 +1,11 @@
+1. 【强制】关于hashCode和equals的处理，遵循如下规则：
+  1） 只要重写equals，就必须重写hashCode。
+  2） 因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的对象必须重写这两个方法。
+  3） 如果自定义对象做为Map的键，那么必须重写hashCode和equals。 说明：String重写了hashCode和equals方法，所以我们可以非常愉快地使用String对象作为key来使用。
+
+2. [具体说明]
+http://www.cnblogs.com/Qian123/p/5703507.html
+
+3. 重点是equals，重写hashCode只是技术要求（为了提高效率）.
+
+4. 

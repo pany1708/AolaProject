@@ -1,0 +1,6 @@
+1.
+https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html
+http://wiki.jikexueyuan.com/project/GradleUserGuide-Wiki/writing_build_scripts/the_project_api.html
+
+[官方文档翻译]
+https://legacy.gitbook.com/book/dongchuan/gradle-user-guide-/details

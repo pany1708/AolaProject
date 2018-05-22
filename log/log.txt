@@ -1,24 +1,21 @@
-1. [Act170630SummerTrain] 128
-   ServerLogger.error("summertrain games error:", t);
-
-2.
-Logger.debug(String.format("概率数组:(%s), 概率总和:%s, 随机数:%s, 随机到的Id:%s", Arrays.toString(rates), radix, random, i));
-
-3. Logger是ServerLogger的更高一层的包装．
-
-4. slf4j, log4j, logback之间的关系:
+1. slf4j, log4j, logback之间的关系:
   slf4j是一系列的日志接口/标准,log4j和logback是具体的实现了日志框架.
   slf4j是java的一个日志门面，实现了日志框架一些通用的api，log4j和logback是具体的日志框架
   log4j和logback可以单独使用,也可以绑定slf4j来使用,绑定时调用slf4j的api来输出日志.
 
-5.
-    1) Logger logger = LoggerFactory.getLogger(Program.class);
-    logger.info("hello world");
-
-6. Logger可以被分配级别。级别包括:
+2. Logger可以被分配级别。级别包括:
      优先级从高到低依次为：off, fatal, error, warn, info, debug, trace, all;
      常用的: error, warn, info, debug
 
      打印高于配置设置的level级别的日志.
 
-7.
+3. slf4j和common-logging一样, 是一种通用的日志接口.
+
+4. slf4j-log4j12：它本身就会依赖slf4j-api和log4j. [依赖会传递的]
+
+5. log4j.properties配置文件
+
+6. 提前加载配置文件:
+  PropertyConfigurator.configure("log4j.properties");
+
+7. slf4接口 + log4j配置文件 + 在启动主线程时加载配置文件.

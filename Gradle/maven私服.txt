@@ -4,4 +4,14 @@
 
   Maven私服（Repository Manager） - Nexus安装和使用
 
-3. 
+3. maven仓库的分类:
+
+   本地仓库: maven本地仓库的默认位置：无论是Windows还是Linux，在用户的目录下都有一个.m2/repository/的仓库目录
+
+   +
+
+   远程仓库: [中央仓库 + 私服 + 其它公共库]:
+
+      私服: 可以代理广域网上的远程仓库 [缓存在私服上]
+
+4. 远程仓库的访问认证[TODO]
