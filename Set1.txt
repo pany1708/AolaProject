@@ -2,6 +2,3 @@
   HashSet是通过HashMap实现的.
   TreeSet是通过TreeMap实现的.
   这里面的2个set使用的都是Map的key.
-
-2.Collection的学习连接:今日必看:
- 研究师傅的写的代码逻辑:反复的看和写.

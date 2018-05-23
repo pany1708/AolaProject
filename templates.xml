@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="javadoc" deleted="false" description="" enabled="true" name="@in">@in "${enclosing_method_arguments}" - ${return_type} : </template><template autoinsert="true" context="javadoc" deleted="false" description="" enabled="true" name="@out">@out "${enclosing_method_arguments}" - ${return_type} : </template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="cmd">	/**&#13;
-	 * ${newName1}&#13;
-	 */&#13;
-	@Command(value = CMDHEAD + "_${newName}", name = "${newName1}")&#13;
-	public void ${newName}(String cmd, ActionscriptObject ao, User u, int fromRoom) {&#13;
-		ActionscriptObject res = ServerHelper.createResponseObj(cmd);&#13;
-		sendResponse(res, u);&#13;
-	}</template></templates>
