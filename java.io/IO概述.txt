@@ -20,6 +20,13 @@ NIO select 阻塞，read，write是非阻塞的。
   Java的Selector对于Linux系统来说，有一个致命限制：同一个channel的select不能被并发的调用。因此，如果有多个I/O线程，必须保证：
   一个socket只能属于一个IoThread，而一个IoThread可以管理多个socket.
 
-7. NIO基础:
+7. Client/Server模型: 2个进程通信:
+1) 服务端提供位置信息(), 客户端通过连接向服务器监听的端口发起请求,如果3次握手建立连接成功,则通过socket来通信.
+2) ServerSocket: 负责绑定IP, 启动监听端口. Socket负责发起连接操作.
 
-1) 提供SocketChannel和ServerSocketChannel 2种不同的套接字通道实现.
+8. BIO ----> NIO 之间出现的 伪异步IO:
+  当客户端的socket封装成task,提交给线程池[维护一个消息队列和n个活跃的线程]
+
+9. IO模型演进的重要一个考量点: 一个系统不受调用方的影响. [BIO无法彻底解决这个问题]
+
+10. NIO提供SocketChannel和ServerSocketChannel 2种不同的套接字通道实现.
