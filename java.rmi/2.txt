@@ -1,0 +1,28 @@
+1. RMI: [Remote Method Invocation], 是RPC的java实现.  RPC [Remote Procddure Call] 远程过程调用
+
+2. 底层是使用了TCP进行了通信, 基于BIO实现的.
+
+3.注册RMI端口:
+Registry localRegistry = LocateRegistry.createRegistry(1099);
+
+等待接收rmi请求:
+Naming.rebind("rmi://127.0.0.1:1099/hello", remote);
+========
+localRegistry.rebind("rmi://127.0.0.1:1099/hello", remote);
+
+本质上Naming还是调用了下面的那个实现[多了一个包装而已].
+
+4. RMI流程:
+https://www.jianshu.com/p/7fbe407fca52
+
+5. 构建注册表: 注册表其实不用写任何代码，在你的JAVA_HOME下bin目录下有一个rmiregistry.exe程序，需要在你的程序的classpath下运行该程序.
+
+在启动服务器的时候，实际上需要运行两个服务器：
+1) 远程对象本身;
+2) 是允许客户端下载远程对象引用的注册表.
+
+6. 创建本地注册表并且获取该注册表的引用:
+
+Registry localRegistry = LocateRegistry.createRegistry(1099);
+
+7. //ip:port/name: 可以唯一定位一个RMI服务器上的发布了的对象.

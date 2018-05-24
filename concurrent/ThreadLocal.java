@@ -56,3 +56,6 @@ ThreadLocal<String> mThreadLocal = new ThreadLocal<String>() {
 15. ThreadLocal会引起内存泄漏的本质: ThreadLocal的声明周期和Thread一样长.
 
 16. 分配使用了ThreadLocal又不再调用get(),set(),remove()方法，那么就会导致内存泄漏。
+
+17. 引发的内存泄漏
+  https://my.oschina.net/hosee/blog/729726

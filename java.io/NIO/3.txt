@@ -1,0 +1,4 @@
+1. 多个Channel可以注册到同一个Selector对象,实现了一个线程同时监控多个请求状态(Channel).
+   SocketServerChannel对象只注册了OP_ACCEPT事件, SocketChannel对象只注册了OP_READ事件.
+
+2. 

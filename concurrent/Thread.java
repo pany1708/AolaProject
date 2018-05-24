@@ -27,3 +27,15 @@ while(!Thread.interrupted()) ，则同样可以在中断后离开代码体.
 （1）interrupt：置线程的中断状态
 （2）isInterrupted：线程是否中断
 （3）interrupted：返回线程的上次的中断状态，并清除中断状态  static.
+
+
+8. 线程基础关系:
+
+sleep(): 方法是Thread类里面的，主要的意义就是让当前线程停止执行，让出cpu给其他的线程，但是不会释放对象锁资源以及监控的状态，当指定的时间到了之后又会自动恢复运行状态.
+
+wait(): 方法是Object类里面的，主要的意义就是让线程放弃当前的对象的锁，进入等待此对象的等待锁定池，
+      只有针对此对象调动notify方法后本线程才能够进入对象锁定池准备获取对象锁进入运行状态.
+
+9. Java为我们提供了一个机制，用来捕获并处理在一个线程对象中抛出的未检测异常，以避免程序终止。我们可以通过UncaughtExceptionHandler来实现这种机制。
+
+thread.setUncaughtExceptionHandler((t, e) -> System.out.println(t.getName() + "出现异常，异常信息：" + e));

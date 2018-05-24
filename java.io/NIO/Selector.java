@@ -28,3 +28,46 @@ ServerSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
   通道本身并不会关闭.
 
 9. 只要ServerSocketChannel及SocketChannel向Selector注册了特定的事件，Selector就会监控这些事件是否发生。
+
+10.
+selector是一个选择器，它可以选择某一个Channel，然后做些事情。
+一个线程可以对应一个selector，而一个selector可以轮询多个Channel，而每个Channel对应了一个Socket。
+与上面一个线程对应一个Socket相比，使用NIO后，一个线程可以轮询多个Socket。
+
+11. interest集合: interest集合是你所选择的感兴趣的事件集合
+
+int interestSet = selectionKey.interestOps();
+boolean isInterestedInAccept  = (interestSet & SelectionKey.OP_ACCEPT) == SelectionKey.OP_ACCEPT;
+
+12. ready集合: ready 集合是通道已经准备就绪的操作的集合.
+
+int readySet = selectionKey.readyOps();
+boolean isInterestedInAccept = selectionKey.isAcceptable();
+
+13. Set<SelectionKey> readyKeys = readSelector.selectedKeys();
+可以遍历这个已选择的键集合来访问就绪的通道:
+
+Set<SelectionKey> readyKeys = readSelector.selectedKeys();
+for (Iterator<SelectionKey> it = readyKeys.iterator(); it.hasNext();) {
+	SelectionKey sk = it.next();
+	it.remove();
+
+	if (!sk.isValid()) {
+		continue;
+	}
+
+	SocketChannel sc = (SocketChannel) sk.channel();
+	Session session = (Session) sk.attachment();
+
+	if (session.lost) {
+		continue;
+	}
+
+	if (sk.isWritable()) {
+		handleWrite(sk, sc, session);
+	} else {
+		handleRead(sk, sc, session);
+	}
+}
+
+14. 

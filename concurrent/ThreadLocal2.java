@@ -9,4 +9,6 @@ protected T initialValue() { };
 都是用于处理当前线程中变量的副本.
 initialValue一般在使用时进行重写,是一个延迟加载的方法.
 
-3. 
+3. 实现细节:
+
+1) 在计算hash时采用了 hashCode & (size-1) 的算法. [取模运算].

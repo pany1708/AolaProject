@@ -9,11 +9,8 @@ http://xintq.net/2014/07/22/rmi/
 
 3)
 
-
-
-
 3. 表示符:
-  该名称是URL形式的，类似于http的URL，schema是rmi；
+  该名称是URL形式的，类似于http的URL, 协议是rmi；
   格式类似于rmi://host:port/name，host指明注册表运行的注解，port表明接收调用的端口，name是一个标识该对象的简单名称。
   主机和端口都是可选的，如果省略主机，则默认运行在本地；如果端口也省略，则默认端口是1099;
 
@@ -29,4 +26,14 @@ java.rmi.registry：提供注册表的创建以及查找和命名远程对象的
 
 6. 实现了java.rmi.Remote接口的类或者继承了java.rmi.Remote接口的所有接口都是远程对象。
 
-7.
+7.Java RMI由3个部分构成：
+
+1) RMIService即JDK提供的一个可以独立运行的程序（bin目录下的rmiregistry）.
+2) RMIServer即我们自己编写的一个java项目，这个项目对外提供服务.
+3) RMIClient即我们自己编写的另外一个java项目，这个项目远程使用RMIServer提供的服务.
+
+   首先，RMIService必须先启动并开始监听对应的端口。
+   其次，RMIServer将自己提供的服务的实现类注册到RMIService上，并指定一个访问的路径（或者说名称）供RMIClient使用。
+   最后，RMIClient使用事先知道（或和RMIServer约定好）的路径（或名称）到RMIService上去寻找这个服务，并使用这个服务在本地的接口调用服务的具体方法。
+
+RMI使用线程池来处理新接收的远程方法调用请求.

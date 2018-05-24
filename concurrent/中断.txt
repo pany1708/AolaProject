@@ -1,0 +1,43 @@
+1. thread.interrupt(): 将线程中断状态标志设置为true.
+
+2. 线程运行中有调用其阻塞的函数(Thread.sleep(), Object.wait(), Thread.join()), 阻塞函数的调用,会轮询检测中断标志状态
+   1) true: 停止阻塞抛出InterruptedException && 重置中断状态标志.
+   2) false: 继续阻塞, 一直到阻塞正常结束.
+
+  BlockingQueue#put、BlockingQueue#take、Object#wait、Thread#sleep等
+
+3. 停止一个线程: 需要通过一个线程去取消另一个线程正在执行的任务. [中断机制]
+
+4. 协作机制: 其它线程设置目标线程的中断标志, 目标线程在合适的时候去处理该中断请求.
+
+5. Thread提供的方法:
+
+1) public static boolean interrupted():
+
+测试当前线程是否已经中断。线程的中断状态 由该方法清除。换句话说，如果连续两次调用该方法，则第二次调用将返回 false（在第一次调用已清除了其中断状态之后，
+且第二次调用检验完中断状态前，当前线程再次中断的情况除外）。
+
+2) public boolean isInterrupted() : 测试线程是否已经中断。线程的中断状态不受该方法的影响。
+
+3) public void interrupt(): 中断线程
+
+
+6. 注意可中断方法: void put(E e) throws InterruptedException;
+
+7. 中断原则:
+
+1)  一般的代码中，尤其是作为一个基础类库时，绝不应当吞掉中断，
+    即捕获到InterruptedException后在catch里什么也不做，清除中断状态后又不重设中断状态也不抛出InterruptedException等.
+    因为吞掉中断状态会导致方法调用栈的上层得不到这些信息.
+
+2) 若不确定调用某个线程的interrupt后该线程会做出什么样的响应，那就不应当中断该线程.
+
+8. 应用场景:
+
+  点击某个桌面应用中的取消按钮时；
+  某个操作超过了一定的执行时间限制需要中止时;
+  多个线程做相同的事情，只要一个线程成功其它线程都可以取消时;
+  一组线程中的一个或多个出现错误导致整组都无法继续时;
+  当一个应用或服务需要停止时.
+
+9.
