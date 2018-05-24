@@ -1,3 +1,0 @@
-use rpgas;
-
-UPDATE `DEV_RmiSource` SET `IsUsing`=0 WHERE  `Name`='summertrain'

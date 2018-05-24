@@ -1,6 +1,0 @@
-private Room roomPlay;
-
-@Override
-protected void init(Object[] params) {
-    roomPlay= ExtensionHelper.instance().getZone((String) params[0]).getRoomByName("petcard3scene");
-}
