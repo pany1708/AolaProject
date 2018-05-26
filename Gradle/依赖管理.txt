@@ -1,0 +1,36 @@
+1. 依赖管理: 构建 + 发行(上传)
+
+2. 依赖的声明:
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+}
+
+dependencies {
+    compile 'org.hibernate:hibernate-core:3.6.7.Final'
+}
+
+3. 发行
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId "com.baitian.aola"
+            artifactId "aola-alappif"
+            version "${version}"
+            //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "http://repo.bt/repository/aola-repo/"
+            credentials {
+                try{
+                    username "${un}"
+                    password "${pwd}"
+                }catch(Exception e){
+
+                }
+            }
+        }
+    }
+}

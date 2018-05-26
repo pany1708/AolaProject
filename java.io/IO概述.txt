@@ -1,8 +1,4 @@
-1. 文章:
-
-https://tech.meituan.com/nio.html
-
-http://www.jasongj.com/java/nio_reactor/
+1.
 
 2. BIO -> NIO -> AIO
 

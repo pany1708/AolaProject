@@ -1,0 +1,32 @@
+1.  获取最新的依赖:
+https://blog.csdn.net/quuqu/article/details/70257552
+https://stackoverflow.com/questions/28538824/how-to-update-gradle-dependencies-to-their-latest-version
+
+版本号:
+  1) latest.release
+  2) compile('group:module:1.1-SNAPSHOT') { changing = true }
+  3) + [保证使用当前的依赖库里的最新版本号的文件，但是不建议使用.]
+
+2. gradle在设计上沿用了maven的依赖管理体系:
+   1) Gradle支持动态的版本依赖。在版本号后面使用+号的方式可以实现动态的版本管理。
+   2) gradle的配置简单明了
+
+3. 构建工具：编译, 测试, 打包.
+
+4. Groovy: 重点项目是java, 【动态语言: 构建脚本】
+
+5. gradle -q task:
+  q: 代表quite模式, 它不会生成gradle的日志信息.
+
+eg:
+
+task hello {
+    doLast {
+        println 'Hello world!'
+    }
+}
+
+// << 操作符是 doLast 的简单别称.
+task hello << {
+    println 'Hello world!'
+}

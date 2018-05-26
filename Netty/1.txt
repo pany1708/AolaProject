@@ -3,4 +3,4 @@
 2. Netty中使用了Reactor模式, 引入了多Reactor, 也即为: 一个主Reactor负责监控所有的连接请求, 多个子Reactor负责监控并处理读/写请求, 减轻了主Reactor压力[降低了延迟].
    子Reactor分别属于一个独立的线程, 每个连接成功的后Channel的所有操作都是由同一个线程处理.
 
-3. 
+3.

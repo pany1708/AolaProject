@@ -3,3 +3,7 @@
 https://waylau.gitbooks.io/essential-netty-in-action/
 
 https://waylau.com/netty-4-user-guide/
+
+
+2. 在线书籍:
+https://waylau.gitbooks.io/essential-netty-in-action/GETTING%20STARTED/Writing%20the%20echo%20server.html

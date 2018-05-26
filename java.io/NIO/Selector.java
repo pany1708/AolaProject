@@ -1,4 +1,4 @@
-1. Selector： 选择器.
+1. Selector： 选择器[多路复用器], NIO基础
 
 Java NIO的选择器允许一个单独的线程同时监视多个通道，可以注册多个通道到同一个选择器上，然后使用一个单独的线程来“选择”已经就绪的通道.
 
@@ -70,4 +70,4 @@ for (Iterator<SelectionKey> it = readyKeys.iterator(); it.hasNext();) {
 	}
 }
 
-14. 
+14.

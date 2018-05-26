@@ -3,3 +3,7 @@ http://ifeve.com/java-nio-all/
 
 [重要]
 http://www.iteye.com/magazines/132-Java-NIO
+
+https://tech.meituan.com/nio.html
+
+http://www.jasongj.com/java/nio_reactor

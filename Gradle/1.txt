@@ -1,35 +1,46 @@
-1.  获取最新的依赖:
-https://blog.csdn.net/quuqu/article/details/70257552
-https://stackoverflow.com/questions/28538824/how-to-update-gradle-dependencies-to-their-latest-version
+1. 主流的编译工具.
 
-版本号:
-  1) latest.release
-  2) compile('group:module:1.1-SNAPSHOT') { changing = true }
-  3) + [保证使用当前的依赖库里的最新版本号的文件，但是不建议使用.]
+2. gradle项目的最基础的文件配置：
+   MyApp
+      |—— build.gradle
+      |—— settings.gradle
+      |—— app
+          |—— build.gradle
+
+  说明: 一个项目有一个setting.gradle, 包括一个顶层的build.gradle文件, 每个Module都有自己的一个build.gradle文件.
+
+setting.gradle: 哪些module一个呗加入到编译过程,但module项目不需要这个文件. [这个文件主要用在初始化阶段会被执行].
+build.gradle: 顶层的build.gradle最终会被应用到所有项目中.
+
+3. Gradle的2个最基本的概念: 项目和任务
+
+  1) 项目指的是构建产物(Jar包)或者实施产物(将应用部署到生产环境).一个项目包含一个或多个任务.
+  2) 任务值不可分的最小的工作单元,执行构建任务(比如编译项目或者执行测试).
+
+  Build
+    | —— 1..—— project
+                 | —— 1.. —— task;
 
 
+4. 我们能够使用以下配置文件对Gradle的构建进行配置：
+  Gradle构建脚本（build.gradle）指定了一个项目和它的任务。
+  Gradle属性文件（gradle.properties）用来配置构建属性。
+  Gradle设置文件（gradle.settings）对于只有一个项目的构建而言是可选的，如果我们的构建中包含多于一个项目，那么它就是必须的，
+因为它描述了哪一个项目参与构建。每一个多项目的构建都必须在项目结构的根目录中加入一个设置文件。
 
-2. gradle在设计上沿用了maven的依赖管理体系:
-   1) Gradle支持动态的版本依赖。在版本号后面使用+号的方式可以实现动态的版本管理。
-   2) gradle的配置简单明了
+5. [Gradle基础插件库](https://docs.gradle.org/current/userguide/standard_plugins.html)
 
+apply plugin: 必须指明使用的插件【插件里做了很多task：编译，测试，打包】
 
-3. 构建工具：编译, 测试, 打包.
+6. eclipse插件 buildship
 
-4. Groovy: 重点项目是java, 【动态语言: 构建脚本】
+7. 构建工具的进化:
+   ant ——> maven ——> gradle
 
-5. gradle -q task:
-  q: 代表quite模式, 它不会生成gradle的日志信息.
+8. Gradle的配置是Groovy脚本(基于java) 【Groovy语言】
 
-eg:
+9. 运行test.groovy文件： groovy ./test.groovy
 
-task hello {
-    doLast {
-        println 'Hello world!'
-    }
-}
-
-// << 操作符是 doLast 的简单别称.
-task hello << {
-    println 'Hello world!'
-}
+10. Gradle Wrapper: 版本兼容
+1) .gradle文件夹;
+2)
