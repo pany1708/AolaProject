@@ -1,0 +1,48 @@
+1. Netty的核心组件:
+Channel
+ChannelFuture
+EventLoop
+ChannelHandler
+ChannelPipeline
+
+
+2. Channel: 包含基本的I/O操作.
+Channel的实现主要有2个:
+   NioServerSocketChannel:  给server使用, 始终只有1个.
+   NioSocketChannel:  给客户端使用的,每个连接生成一个NioSocketChannel对象.
+
+
+3. EventLoop: 为Channel处理I/O操作
+
+  1)  一个连接到达, Netty就会注册一个CHannel, 然后从EventLoopGroup中分配一个EventLoop绑定到Channel上;
+
+  2)  在Channel的生命周期内都是由这个绑定的EventLoop来服务的.
+
+  3)  EventLoopGroup:
+      netty的Reactor线程池;
+      EventLoop的容器
+      处理注册到本线程多路复用器Selector上的Channel
+
+
+
+4. ChannelFuture:
+   通过这个接口的addListener()注册一个ChannelFutureListener.
+
+
+5. ChannelHandler:  Netty最为核心的组件, 充当处理所有入站和出站数的应用逻辑的容器.
+ChannelHandler有两个核心子类  ChannelInboundHandler 和 ChannelOutboundHandler.
+
+
+6. ChannelPipeline:
+
+1)
+   ChannelPipeline 为 ChannelHandler 链提供了一个容器并定义了用于沿着链传播入站和出站事件流的 API.
+   当 ChannelHandler 被添加到 ChannelPipeline 时，它将会被分配一个 ChannelHandlerContext，它代表了 ChannelHandler 和 ChannelPipeline 之间的绑定.
+
+   每个channel内部都会持有一个ChannelPipeline对象pipeline.
+
+2)
+   当channel完成IO操作时会触发pipeline的相应方法
+
+
+7.
