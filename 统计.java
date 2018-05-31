@@ -3,11 +3,10 @@ select UserId,DataId,Count from ActData8Mod%s where DataId in (#DataId#)
 DataId=1142 and Count>=1
 DataId=1115 and isFlagset(Count,1)
 
-无需指定 select UserId,DataId,Count from ActData8Mod%s where DataId in (#DataId#)
 eventId=24193
 
-
-buttonId 需要指定
+select buttonId,value@count from rpglog.ButtonLog where buttonId in (#buttonId#)
+buttonId=11833
 
 
 1. LogParticipationHandler.log(u, eventId);
@@ -29,6 +28,3 @@ eventId=24784
 LogHandler.putLogCommand(new ButtonLog(BUTTON_IDS_SHOP_ITEM[index]));
 
 脚本:   rpglog
-
-select buttonId,value@count from rpglog.ButtonLog where buttonId in (#buttonId#)
-buttonId=11833

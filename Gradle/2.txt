@@ -30,3 +30,16 @@ task hello {
 task hello << {
     println 'Hello world!'
 }
+
+6. 关闭依赖传递.
+
+1) 全局性的关闭依赖传递特性。
+
+configurations.all {
+   transitive = false
+}
+
+2) compile `org.springframework:spring-web:4.3.4.RELEASE@jar` @jar关闭指定包的依赖传递
+
+
+7. 动态依赖最新版本: +

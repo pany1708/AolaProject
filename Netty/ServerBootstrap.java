@@ -15,3 +15,7 @@
    childerHandler针对 workerGroup起作用.
 
 5. 客户端只能使用handler.
+
+6. Reactor线程就是NioEventLoop.
+
+7. 
