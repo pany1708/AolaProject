@@ -31,4 +31,7 @@
 3) git:
    Git integration for Eclipse
    Git integration for Eclipse - Task focused interface
-   Java implementation of Git 
+   Java implementation of Git
+
+4) Spring boot:
+   sts: (Spring Tools)
