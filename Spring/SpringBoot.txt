@@ -1,0 +1,16 @@
+1. Spring boot 是 Spring 的一套快速配置脚手架，可以基于spring boot 快速开发单个微服务，
+   Spring Cloud是一个基于Spring Boot实现的云应用开发工具
+
+2. 依赖关系: spring -> spring booot > spring cloud
+
+3. spring 是一个容器性质的框架，主要基于配置文件管理对象
+
+4. Spring boot把大量的常见组件组合起来.[自动配置]  小功能的组件
+
+   springboot=spring+springmvc
+
+5. spring cloud 是对spring boot 开发的项目进行构建的过程.
+
+   springcloud=springboot+ribbon+注册中心+熔断器+...
+
+6.

@@ -22,4 +22,13 @@
 
 8. ctrl+e：快速转换编辑器<切换tab>  ctrl+page down或ctrl+page up： 选项卡之间快速切换
 
-9.
+9. 常用的插件库
+
+1) 全黑色主题:  DevStyle (Darkest Dark Theme)
+
+2) gradle: Buildship
+
+3) git:
+   Git integration for Eclipse
+   Git integration for Eclipse - Task focused interface
+   Java implementation of Git 
