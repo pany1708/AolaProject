@@ -12,4 +12,6 @@ Runtime.getRuntime().exec("XCOPY E:\\vstsworkspace\\project2009\\source\\server\
 
 Process.waitFor()等待操作完成
 
-4. 
+4. Runtime.getRuntime().addShutdownHook();
+1) 在jvm中增加一个关闭的钩子;
+2) 这个操作会在jvm关闭前才会执行.

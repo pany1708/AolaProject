@@ -1,0 +1,7 @@
+1. 基础:
+1) @Component: 描述Spring中的bean.
+2) @Repository: 用于对Dao实现类进行标注.
+3) @Service: 用于对Service实现类进行标注.
+4) @Controller: 用于对Controller实现类进行标注.
+
+2. @Autowired: 自动装配

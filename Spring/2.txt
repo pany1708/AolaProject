@@ -24,3 +24,14 @@
           1) 如何创建一个bean.
           2) bean的生命周期的详细信息.
           3) bean的依赖关系.
+
+6. Spring的使用:
+1) 当需要管理JavaBean对象的时候就可以使用Spring.
+
+7. 面向接口编程原则.
+
+8. ApplicationContext 应用上下文，加载Spring框架配置文件:
+1) 加载classpath: new ClassPathXmlApplicationContext("applicationContext.xml");
+2) 加载磁盘路径：new FileSystemXmlApplicationContext("applicationContext.xml");
+
+9.
