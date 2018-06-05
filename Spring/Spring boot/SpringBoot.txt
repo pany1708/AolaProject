@@ -13,4 +13,6 @@
 
    springcloud=springboot+ribbon+注册中心+熔断器+...
 
-6.
+6. 安装cli命令行 + eclipse插件sts[Spring Tool Suite](Spring工具套装)
+
+7. Spring Boot每次发布都关联一个Spring框架的基础版本[强烈建议不要自己指定Spring版本].

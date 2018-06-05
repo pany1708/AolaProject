@@ -1,0 +1,24 @@
+1. Spring Boot Cli全称是: Spring Boot Command Line [命令行工具], 运行Spring脚本的命令行工具, 支持运行Groovy脚本.
+
+2. 可用于快速搭建基础Spring的原型.
+
+3. 使用cli运行实例:
+
+1) 新建 hello.groovy文件, 代码如下：
+
+@RestController
+public class HelloController {
+
+    @RequestMapping(value = "/hello")
+    public String sayHello() {
+        return "Hello，Spring Boot！";
+    }
+}
+
+2) spring run hello.groovy
+
+3) 默认端口8080
+
+4. cli安装: 下载zip,配置到path, cmd验证: spring -- version
+
+5.
