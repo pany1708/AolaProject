@@ -1,0 +1,9 @@
+1. 2中动态代理方式
+
+2. cglib的jar包:
+    cglib-nodep-2.2.jar：使用nodep包不需要关联asm的jar包,jar包内部包含asm的类.
+    cglib-2.2.jar：使用此jar包需要关联asm的jar包,否则运行时报错.
+
+    ["cglib:cglib-nodep:3.2.6"]
+    
+3.

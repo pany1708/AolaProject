@@ -1,0 +1,23 @@
+1. 延迟初始化Bean: 【惰性初始化】
+
+<bean id="helloApi" class="cn.javass.spring.chapter2.helloworld.HelloImpl"  lazy-init="true"/>
+
+2. depends-on: 指定Bean初始化及销毁时的顺序.
+
+3. 配置注入的数据会覆盖自动装配注入的数据.
+
+4. 基于@Autowired注解的自动装配:
+1) 使用场景: 构造函数, 成员变量, Setter方法, 普通方法
+2) 通过@Autowired使用来消除set, get方法.
+
+<!-- 注解处理器配置 -->
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+<!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 -->
+
+3) 原理:
+在启动IoC时,容器自动装载一个AutowiredAnnotationBeanPostProcessor后置处理器, 当容器扫描到@Autowied、@Resource时, 就会在IoC容器自动查找需要的bean，并装配给该对象的属性.
+
+4) 自动扫描
+<context:component-scan base-package="com.aola.test" />
+
+5. 方法注入: 查找方法注入 +  方法替换注入

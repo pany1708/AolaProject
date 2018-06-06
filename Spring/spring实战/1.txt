@@ -1,0 +1,113 @@
+1. IoC是一种思想不是技术, 一个面向对象编程的法则. [设计松耦合的程序]
+
+2. IoC容器负责实例化、定位、配置应用中的对象及建立对象间的依赖.
+
+3. Spring中的BeanFactory是IoC容器的实际代表者.
+
+4. 基本注解：
+1) 标注 bean类
+————————————————————————————————————————————————————————————
+@Component:标准一个普通的spring Bean类。
+@Controller:标注一个控制器组件类。
+@Service:标注一个业务逻辑组件类。
+@Repository:标注一个DAO组件类。
+————————————————————————————————————————————————————————————
+2) 作用域
+————————————————————————————————————————————————————————————
+@Scope ：prototype、request、session、global session
+————————————————————————————————————————————————————————————
+3) 自动装配
+————————————————————————————————————————————————————————————
+ @Autowired
+————————————————————————————————————————————————————————————
+
+5. 实例化Bean:
+1) 传统应用: 通过new和反射方式来进行实例化.
+2) IoC: 根据Bean定义里的配置元数据使用反射机制来创建Bean.
+
+6. Spring IoC容器的依赖有两层含义：Bean依赖容器和容器注入Bean的依赖资源.
+
+7. 依赖注入只是一种装配对象的手段.
+
+8. 注入的方式:
+
+  构造器注入  +  setter注入 +  方法注入
+  ——|
+    |--- 静态工厂方法注入
+    |--- 实例工厂注入
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
++ 根据参数索引注入:  <constructor-arg index="0" value="Hello Spring!"/>
++ 根据参数类型注入:  <constructor-arg type="java.lang.String" value="Hello Spring!"/>
++ 根据参数名注入:   <constructor-arg name="messag" value="Hello Spring!"/>
+
+------------------------------------------------------------------------------------------------------
+1). 使用构造器实例化Bean.
+   <bean name="bean1" class="cn.javass.spring.chapter2.HelloImpl2"/>
+
+   <bean name="bean2" class="cn.javass.spring.chapter2.HelloImpl2">
+      <constructor-arg index="0" value="Hello Spring!"/>
+   </bean>
+
+  使用空构造器 或者 使用有参数构造器进行定义.
+
+2). 使用静态工厂方式实例化Bean.
+   bean还需要factory-method属性来指定实例化Bean的方法.
+   bean配置文件:
+
+  方式1:
+  <bean id="bean3" class="cn.javass.spring.chapter2.HelloApiStaticFactory" factory-method="newInstance">
+      <constructor-arg index="0" value="Hello Spring!"/>
+  </bean>
+
+  方式2:
+  <!--1.定义实例工厂Bean--->
+  <bean id="beanInstanceFactory" class="cn.javass.spring.chapter2.HelloApiInstanceFactory"/>
+  <!--2.使用实例工厂Bean创建Bean--->
+  <bean id="bean4" factory-bean="beanInstanceFactory" factory-method="newInstance">
+     <constructor-arg index="0" value="Hello Spring!"></constructor-arg>
+  </bean>
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+3). setter注入: 是通过在通过构造器、静态工厂或实例工厂实例好Bean后，通过调用Bean类的setter方法进行注入依赖.
+
+   <property name="message" value="Hello World!" />
+
+   指定setter名字: 比如setMessage就是message.
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+附注： JavaBean命名规范
+
+注意： POJO的限制
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+4). 注入Bean ID:
+
+  <property name="id"><idref bean="bean1"/></property>
+
+  <bean id="bean1" class="……"/>
+  <bean id="idrefBean1" class="……">
+      <property name="id" value ="bean1"/>
+  </bean>
+
+  推荐使用方式二
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+5). 注入集合、数组和字典:
+
+<property name="empName">
+   <list>
+      <value>小米</value>
+      <value>小明</value>
+      <value>小四</value>
+   </list>
+</property>
+
+<property name="empList">
+    <list>
+      <ref bean="emp1" />
+      <ref bean="emp2"/>
+   </list>
+</property>
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————

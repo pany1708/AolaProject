@@ -1,0 +1,31 @@
+1. 书:
+  Spring实战
+  SpringBoot实战
+
+2. 路线:
+  1) 理解IoC和AOP;
+  2) 学习SpringMVC.
+
+3. Spring: Full-Stack
+1) DI + AOP：以此为核心的Java一站式的集合框架.
+2) DI: 对象的依赖管理.
+3) AOP: 解耦业务和公共服务.
+
+只有通过IoC先由Spring创建对象后，才能进行下一步对象注入（DI），所以说DI依赖IoC.
+
+4. ORM [Object Relation Mapping]对象关系映射
+以面向对象的方式来进行数据库操作的技术. ===>>> Mybatis [轻量级的ORM框架] 【持久化】
+
+java访问数据库流程:
+  准备好SQL语句;
+  调用JDBC的API传入SQL语句，设置参数;
+  解析JDBC返回的结果.
+
+ORM框架可以优化这个流程,jdbc的调用有很多重复性的代码. 以面向对象的方式来操作数据库,框架自动帮助执行.
+
+提供了一层与数据库操作的一层中间抽象
+
+5. MVC框架: SpringMVC 【MVC】
+   Spring MVC提供了一个DispacherServlet（可以Spring MVC是以Servlet技术为基础的），这个Servlet把Web应用中Servlet中经常要实现的功能封装起来并提供一层公共抽象.
+
+6. SpringMVC基本可以帮你屏蔽Servlet的API，ORM则可以帮你屏蔽JDBC的API.
