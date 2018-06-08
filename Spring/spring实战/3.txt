@@ -1,0 +1,5 @@
+1. bean的作用域: 对象或者变量之间的可见范围.
+   1)基础: singleton, prototype; web作用域: request, session, global session; 自定义作用域.
+   2)默认值是单例模式singleton.
+
+2. 处理外部资源: Spring 提供一个Resource接口来统一这些底层资源一致的访问. 【资源访问】
